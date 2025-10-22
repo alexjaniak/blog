@@ -3,18 +3,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title>Aelix&#39;s Blog</title>
   <subtitle>Explore the dark forest with me</subtitle>
-  <link href="https://aelix.dev/blog/feed/feed.xml" rel="self" />
-  <link href="https://aelix.dev/blog/" />
+  <link href="https://aelix.dev/feed/feed.xml" rel="self" />
+  <link href="https://aelix.dev/" />
   <updated>2024-10-19T00:00:00Z</updated>
-  <id>https://aelix.dev/blog/</id>
+  <id>https://aelix.dev/</id>
   <author>
     <name>Aelix</name>
   </author>
   <entry>
     <title>An Ideal World Approximator</title>
-    <link href="https://aelix.dev/blog/blog/an-ideal-world-approximator/" />
+    <link href="https://aelix.dev/blog/an-ideal-world-approximator/" />
     <updated>2024-10-19T00:00:00Z</updated>
-    <id>https://aelix.dev/blog/blog/an-ideal-world-approximator/</id>
+    <id>https://aelix.dev/blog/an-ideal-world-approximator/</id>
     <content type="html">&lt;p&gt;This is an to myself. Its an analysis of myself as an agent and what control I have to better my decision making. It&#39;s a little reductionary, but I think it gets a lot of good points across.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;From first principles, a rational agent (you) is a being with information intake, an ability to rationally process that information, and the capability to make/execute decisions based on that processing.&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;processing&quot;&gt;Processing&lt;/h2&gt;
