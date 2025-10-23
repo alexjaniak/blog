@@ -229,3 +229,18 @@ class HeadingAnchors extends HTMLElement {
 HeadingAnchors.register();
 
 export { HeadingAnchors }
+{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Alex Janiak",
+			"alternateName": "Aelix",
+			"url": "https://aelix.dev",
+			"sameAs": [
+				"https://x.com/waniak_"
+			],
+			"alumniOf": {
+				"@type": "EducationalOrganization",
+				"name": "Duke University"
+			},
+			"description": "Computer Science and Philosophy student at Duke University. Exploring rational decision-making, technology, and life."
+		}
