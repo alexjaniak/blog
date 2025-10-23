@@ -1,13 +1,13 @@
 ---
 title: An Ideal World Approximator
-description: How to be a understand the world and make better decisions.
+description: How to understand the world and make better decisions.
 date: 2024-10-19
 tags:
   - life
   - philosophy
 ---
 
-This is an to myself. Its an analysis of myself as an agent and what control I have to better my decision making. It's a little reductionary, but I think it gets a lot of good points across.
+This is a reflection of myself as an agent and what control I have to better my decision making. It's a little reductionist, but I think it gets a lot of good points across.
 
 **From first principles, a rational agent (you) is a being with information intake, an ability to rationally process that information, and the capability to make/execute decisions based on that processing.**
 
@@ -19,17 +19,17 @@ Interestingly, tied to your ability to process information is some approximation
 
 Your approximation of the world also appears to change based on the information you are given. If you get pinched and it hurts, you'll think that pinching is a thing that hurts.
 
-Additionally, at least for me, this approximations comes to me as an ideal. In my day-to-day life, I don't think twice about whether what I know is inductive, or how misaligned it is from reality: I treat my approximation as truth. I think that is the way the world actually is, until I'm proved otherwise, and that approximation is forced to update.
+Additionally, at least for me, this approximation comes to me as an ideal. In my day-to-day life, I don't think twice about whether what I know is inductive, or how misaligned it is from reality: I treat my approximation as truth. I think that is the way the world actually is, until I'm proved otherwise, and that approximation is forced to update.
 
 That being said, I'm not quite sure how to become more rational, but you can change your model of the world by feeding yourself new information. This is a pivotal take. We are beings of approximations that think in ideals. That means our perception of the world is based on a relatively small set of inputs, yet we make decisions on it as if we knew what the world is actually like.
 
 But what about decisions where you know you aren't certain about the result? If you've ever had to face a really tough decision, you might have thought along the lines of "well, if I did x then y would happen ... or if I did z then c or maybe d …". From my internal observation, this seems to be you using diverging approximations that occur after you've recognized you haven't gathered enough information. Notably, you're still thinking in terms of ideals (hypothetical world-views), created from previous information intake, and still making predictions about the world based on them.
 
-In short, It's probably pretty hard to make good decisions if your approximation of the world is shit.
+In short, it's probably pretty hard to make good decisions if your approximation of the world is shit.
 
 ## Information Intake & Decisions
 
-Hopefully, you are able minded so you can trust yourself to make rational decisions and able bodied enough to execute on them. Indeed, a life without either of these would be difficult — so remember to be grateful!
+Hopefully, you are able-minded so you can trust yourself to make rational decisions and able-bodied enough to execute on them. Indeed, a life without either of these would be difficult — so remember to be grateful!
 
 If you can't execute on some decision, is that really a good decision? What can you do to be able to execute on it in the future?
 
@@ -45,9 +45,9 @@ If you cater your information intake, you can sculpt your world-view. You can fo
 
 Unfortunately, since you can't take in everything, your world-view is probably going to be far off from reality. The only way to correct this is to test your predictions against the world via decisions. Armchair thinkers can convince themselves of anything. This is the danger of pure theory and rationalism. Unless you have contact with reality, your thinking has no friction to propel itself forward.
 
-This is the purpose of feedback loops. Take in information, decide what to do, and then use the outcome of as input. If you predict that pinching doesn't hurt, and you pinch yourself, and it hurts, then you have learned something new about the world. Your world-view approximation is closer to reality.
+This is the purpose of feedback loops. Take in information, decide what to do, and then use the outcome as input. If you predict that pinching doesn't hurt, and you pinch yourself, and it hurts, then you have learned something new about the world. Your world-view approximation is closer to reality.
 
-The more you probe the world via decisions the more chances you have to update your approximation and make better decisions. Since the world is impossibly detailed (?), you'll want to probe as much as possible. This also means that your choice of feedback loops is incredibly important. If they are too long, then you're iterating too slowly. Time is extremely costly. If your feedback loop has vague outcomes, then your learnings will be muddied. Of course, just do the best with whatever situation you are in.
+The more you probe the world via decisions, the more chances you have to update your approximation and make better decisions. Since the world is impossibly detailed (?), you'll want to probe as much as possible. This also means that your choice of feedback loops is incredibly important. If they are too long, then you're iterating too slowly. Time is extremely costly. If your feedback loop has vague outcomes, then your learnings will be muddied. Of course, just do the best with whatever situation you are in.
 
 If you have no choice but to run feedback loops that take a long time, try batching. That is, if you can, run multiple experiments at once (batch them). You'll move that much faster.
 
@@ -61,7 +61,7 @@ Of course, the world is complicated. Retrying the same thing often yields differ
 
 This highlights the importance of using learnings to update your world-view. Hopefully, the outcome of your first experiment will have taught you enough to try something else. You also have the ability to decide without processing (at the conscious level). You can just make decisions. But then you are most likely not acting to your greatest ability. Our raw decision making is emotional and based on instinct. Worst case, it's completely random. If you know something about the world, you should probably use that knowledge in your probes.
 
-Compare your approximation of the world to trying to solve a maze. Would you keep going down the same corridor if you know it's a dead-end? Would make random turns even if you have explored some sections?
+Compare your approximation of the world to trying to solve a maze. Would you keep going down the same corridor if you know it's a dead-end? Would you make random turns even if you have explored some sections?
 
 ## An Ideal World Approximator
 
@@ -73,11 +73,11 @@ Unattainable, but perhaps you could approximate to be an ideal world approximato
 
 ## Incompleteness, Rejecting Perfectionism, and Meta-approximation
 
-What could you now to be a better approximator?
+What could you do now to be a better approximator?
 
-The first hurdle is coming to terms with incompleteness and rejecting perfectionism. That book that got boring? Put it down! Only interested in one section of a book? Read only that one! Developing a new project and the build time is too long? Unless you're tested the idea previously, pivot or ship it incomplete! You should only work on the highest ROI tasks. Only intake the highest ROI content. If it is no longer high ROI, pivot unless absolutely necessary. This allows you to approximate new, more effective, feedback loops and refine your information feeds.
+The first hurdle is coming to terms with incompleteness and rejecting perfectionism. That book that got boring? Put it down! Only interested in one section of a book? Read only that one! Developing a new project and the build time is too long? Unless you've tested the idea previously, pivot or ship it incomplete! You should only work on the highest ROI tasks. Only intake the highest ROI content. If it is no longer high ROI, pivot unless absolutely necessary. This allows you to approximate new, more effective, feedback loops and refine your information feeds.
 
-Unless you're being forced to do something, any expectation is made by you set on yourself. It is fictitious. These are barriers that you placed to better yourself, but at some point you have to take off the training wheels. 
+Unless you're being forced to do something, any expectation is set by you on yourself. It is fictitious. These are barriers that you placed to better yourself, but at some point you have to take off the training wheels. 
 
 Being a perfectionist takes time. You don't have much of that.
 
@@ -85,6 +85,6 @@ To better interpret and absorb the outcomes of experiments, take time to reflect
 
 To analyze quality of feedback loops, set reasonable goals for what you seek to achieve with each experiment. It'll also help with reflection.
 
-To kickstart better information feeds, reduce time with garbage and create new sources/reflections for the values you seek to better. Mindfulness meditation also cranks up awareness and allows you to catch garbage as it enters your flow. 
+To kickstart better information feeds, reduce time with garbage and create new sources/reflections for the values you seek to improve. Mindfulness meditation also cranks up awareness and allows you to catch garbage as it enters your flow. 
 
 No need to do everything all at once. Plant the seed and water it daily. Iteration takes time. World approximation takes forever :)
