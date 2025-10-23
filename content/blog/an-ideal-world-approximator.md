@@ -7,6 +7,9 @@ tags:
   - philosophy
 ---
 
+![Newton by William Blake](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Newton-WilliamBlake.jpg/960px-Newton-WilliamBlake.jpg)
+*Newton (1795-1805) by William Blake - The rational measurer attempting to understand the universe*
+
 This is a reflection of myself as an agent and what control I have to better my decision making. It's a little reductionist, but I think it gets a lot of good points across.
 
 **From first principles, a rational agent (you) is a being with information intake, an ability to rationally process that information, and the capability to make/execute decisions based on that processing.**
