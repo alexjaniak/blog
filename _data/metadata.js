@@ -2,10 +2,10 @@ export default {
 	title: "Aelix's Blog",
 	url: "https://aelix.dev/",
 	language: "en",
-	description: "Explore the dark forest with me",
+	description: "Explore the dark forest with me.",
 	author: {
-		name: "Aelix",
+		name: "Aelix (Alex Janiak)",
 		email: "",
-		url: ""
+		url: "https://aelix.dev"
 	}
 }

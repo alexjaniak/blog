@@ -8,6 +8,12 @@ const eleventyNavigation = {
 
 Explore the dark forest with me.
 
-Student of life. Duke'25 BS Computer Science, BA Philosophy, Minor Mathematics.
+
+### Education
+Duke University (2021-2025)
+- BS Computer Science
+- BA Philosophy
+- Minor Mathematics
+
 
 Contact me on [𝕏 @waniak_](https://x.com/waniak_)
