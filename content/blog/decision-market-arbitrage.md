@@ -17,7 +17,7 @@ Ever wondered how to profit from inefficient futarchy markets? Here's a simple g
 
 ## Opportunity #1: When spot price > both pass and fail markets
 
-For simplicity, let's say a decision market for a proposal is being run for [@zcombinatorio](https://x.com/zcombinatorio) (with $ZC as the base token and $SOL as the quote token). Spot is trading 1.75 $SOL per ZC and the conditional markets are trading at 1.25 and 0.75.
+For simplicity, let's say a decision market for a proposal is being run for [@zcombinatorio](https://x.com/zcombinatorio) (with $ZC as the base token and $SOL as the quote token). Spot is trading 1.75 $SOL per $ZC and the conditional markets are trading at 1.25 and 0.75.
 
 <img src="/arb-op-1.jpeg" alt="Arbitrage Opportunity 1" eleventy:ignore>
 
