@@ -6,7 +6,10 @@ const eleventyNavigation = {
 ---
 # About
 
-Explore the dark forest with me.
+<div style="text-align: center;">
+  <img src="/og-image.jpg" alt="Profile" style="max-width: 200px; width: 100%;" eleventy:ignore>
+  <p>Explore the dark forest with me.</p>
+</div>
 
 
 ### Education
