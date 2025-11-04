@@ -20,7 +20,7 @@
 &lt;h2 id=&quot;what-is-futarchy&quot;&gt;What is futarchy?&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://blog.ethereum.org/2014/08/21/introduction-futarchy&quot;&gt;This post by Vitalik&lt;/a&gt; is my favorite resource and offers a good in-depth analysis of the mechanism (including a quick overview of potential issues). &lt;a href=&quot;https://futarchy.guide/&quot;&gt;futarchy.guide&lt;/a&gt; is a pretty cool visualization for &lt;a href=&quot;https://x.com/MetaDAOProject&quot;&gt;@MetaDAOProject&lt;/a&gt; if you aren&#39;t familiar with the conditional vault/AMM architecture.&lt;/p&gt;
 &lt;h2 id=&quot;opportunity-1-when-spot-price-both-pass-and-fail-markets&quot;&gt;Opportunity #1: When spot price &amp;gt; both pass and fail markets&lt;/h2&gt;
-&lt;p&gt;For simplicity, let&#39;s say a decision market for a proposal is being run for &lt;a href=&quot;https://x.com/zcombinatorio&quot;&gt;@zcombinatorio&lt;/a&gt; (with $ZC as the base token and $SOL as the quote token). Spot is trading 1.75 $SOL per ZC and the conditional markets are trading at 1.25 and 0.75.&lt;/p&gt;
+&lt;p&gt;For simplicity, let&#39;s say a decision market for a proposal is being run for &lt;a href=&quot;https://x.com/zcombinatorio&quot;&gt;@zcombinatorio&lt;/a&gt; (with $ZC as the base token and $SOL as the quote token). Spot is trading 1.75 $SOL per $ZC and the conditional markets are trading at 1.25 and 0.75.&lt;/p&gt;
 &lt;img src=&quot;https://aelix.dev/arb-op-1.jpeg&quot; alt=&quot;Arbitrage Opportunity 1&quot;&gt;
 &lt;p&gt;You can:&lt;/p&gt;
 &lt;ol&gt;
