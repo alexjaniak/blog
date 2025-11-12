@@ -29,7 +29,7 @@ You can:
 
 Through this, you basically buy $ZC in the conditional markets and sell it at a higher price in spot. You can do this until price impact equals the price difference (excluding fees).
 
-Assuming no slippage, if you entered with 1 SOL, you can swap into 1.33 $fZC (1/0.75) in the fail conditional market and 0.8 $pZC (1/1.25) in the pass conditional market. After you merge your conditional $ZC, you'll have max{1.33, 0.8} = 0.8 $ZC total. You can then sell this $ZC for 1.4 $SOL (0.8*1.75). So you would have made a risk-free 40%!
+Assuming no slippage, if you entered with 1 SOL, you can swap into 1.33 $fZC (1/0.75) in the fail conditional market and 0.8 $pZC (1/1.25) in the pass conditional market. After you merge your conditional $ZC, you'll have min{1.33, 0.8} = 0.8 $ZC total. You can then sell this $ZC for 1.4 $SOL (0.8*1.75). So you would have made a risk-free 40%!
 
 ## Opportunity #2: When spot price < both pass and fail markets
 
