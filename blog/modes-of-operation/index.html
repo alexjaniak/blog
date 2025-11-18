@@ -3,21 +3,21 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Decision Market Arbitrage</title>
-		<meta name="description" content="Ever wondered how to profit from inefficient futarchy markets? Here&#39;s a simple guide to arbitraging decision markets — a mechanism that&#39;s still new enough to have simple alpha.">
+		<title>Modes of Operation</title>
+		<meta name="description" content="Frameworks to help you make decisions">
 		<meta name="author" content="Alex Janiak (Aelix)">
 		<meta name="keywords" content="Alex Janiak, Aelix, Duke University, Computer Science, Philosophy, Mathematics, Blog">
 		<link rel="icon" href="/og-image.jpg">
-		<meta property="og:title" content="Decision Market Arbitrage">
-		<meta property="og:description" content="Ever wondered how to profit from inefficient futarchy markets? Here&#39;s a simple guide to arbitraging decision markets — a mechanism that&#39;s still new enough to have simple alpha.">
+		<meta property="og:title" content="Modes of Operation">
+		<meta property="og:description" content="Frameworks to help you make decisions">
 		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://aelix.dev//blog/decision-market-arbitrage/">
+		<meta property="og:url" content="https://aelix.dev//blog/modes-of-operation/">
 		<meta property="og:site_name" content="Aelix's Blog - Alex Janiak">
 		<meta property="og:image" content="https://aelix.dev/og-image.png">
 		<meta name="twitter:card" content="summary">
 		<meta name="twitter:creator" content="@waniak_">
-		<meta name="twitter:title" content="Decision Market Arbitrage">
-		<meta name="twitter:description" content="Ever wondered how to profit from inefficient futarchy markets? Here&#39;s a simple guide to arbitraging decision markets — a mechanism that&#39;s still new enough to have simple alpha.">
+		<meta name="twitter:title" content="Modes of Operation">
+		<meta name="twitter:description" content="Frameworks to help you make decisions">
 
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Aelix&#39;s Blog">
 		
@@ -525,47 +525,59 @@ pre[class*="language-diff-"] {
 				
 
 
-<h1 id="decision-market-arbitrage">Decision Market Arbitrage</h1>
+<h1 id="modes-of-operation">Modes of Operation</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2025-11-03">03 November 2025</time></li>
-	<li><a href="/tags/futarchy/" class="post-tag">futarchy</a>, </li>
-	<li><a href="/tags/mev/" class="post-tag">MEV</a></li>
+	<li><time datetime="2025-11-17">17 November 2025</time></li>
+	<li><a href="/tags/life/" class="post-tag">life</a>, </li>
+	<li><a href="/tags/philosophy/" class="post-tag">philosophy</a></li>
 </ul>
 
-<img src="/DMA.png" alt="Decision Market Arbitrage">
-<p>Ever wondered how to profit from inefficient futarchy markets? Here's a simple guide to arbitraging decision markets — a mechanism that's still new enough to have simple alpha.</p>
-<h2 id="what-is-futarchy">What is futarchy?</h2>
-<p><a href="https://blog.ethereum.org/2014/08/21/introduction-futarchy">This post by Vitalik</a> is my favorite resource and offers a good in-depth analysis of the mechanism (including a quick overview of potential issues). <a href="https://futarchy.guide/">futarchy.guide</a> is a pretty cool visualization for <a href="https://x.com/MetaDAOProject">@MetaDAOProject</a> if you aren't familiar with the conditional vault/AMM architecture.</p>
-<h2 id="opportunity-1-when-spot-price-both-pass-and-fail-markets">Opportunity #1: When spot price &gt; both pass and fail markets</h2>
-<p>For simplicity, let's say a decision market for a proposal is being run for <a href="https://x.com/zcombinatorio">@zcombinatorio</a> (with $ZC as the base token and $SOL as the quote token). Spot is trading 1.75 $SOL per $ZC and the conditional markets are trading at 1.25 and 0.75.</p>
-<img src="/arb-op-1.jpeg" alt="Arbitrage Opportunity 1">
-<p>You can:</p>
-<ol>
-<li>Split $SOL into $pSOL and $fSOL (conditional tokens)</li>
-<li>Swap these conditional SOL tokens for conditional $ZC tokens in both markets</li>
-<li>Merge your conditional $ZC back into regular $ZC</li>
-<li>Sell the $ZC into $SOL on the spot market for profit</li>
-</ol>
-<p>Through this, you basically buy $ZC in the conditional markets and sell it at a higher price in spot. You can do this until price impact equals the price difference (excluding fees).</p>
-<p>Assuming no slippage, if you entered with 1 SOL, you can swap into 1.33 $fZC (1/0.75) in the fail conditional market and 0.8 $pZC (1/1.25) in the pass conditional market. After you merge your conditional $ZC, you'll have min{1.33, 0.8} = 0.8 $ZC total. You can then sell this $ZC for 1.4 $SOL (0.8*1.75). So you would have made a risk-free 40%!</p>
-<h2 id="opportunity-2-when-spot-price-both-pass-and-fail-markets">Opportunity #2: When spot price &lt; both pass and fail markets</h2>
-<p>The reverse works too - buy spot $ZC, split it, swap for conditional $SOL in both markets, then merge.</p>
-<img src="/arb-op-2.jpeg" alt="Arbitrage Opportunity 2">
-<h2 id="the-key-insight">The Key Insight</h2>
-<p>No arbitrage exists when spot trades between pass and fail prices.</p>
-<p>This is how the mechanism was designed to work - efficient decision markets should always trade the conditional markets between spot.</p>
-<p>Think about it: Why would the current price be lower than BOTH the pass scenario AND the fail scenario? Why should it be higher than both?</p>
-<h2 id="caveats">Caveats</h2>
-<p>In the math for the above example, I avoided slippage. In the graphs, the price impact for all trades is pretty similar.</p>
-<p>In reality, the LP for the conditional markets will probably be less than that of spot. In fact, a common method to fund decision markets is to share liquidity between the spot and the conditional markets. This means that the conditional markets will just have a fraction of the LP of the spot pool.</p>
-<p>As such, the price impact for trading the conditional markets will be far greater than for spot, and perceived arbs are most likely smaller in execution.</p>
-<h2 id="current-implementations">Current Implementations</h2>
-<p><a href="https://x.com/_futarchy">@_futarchy</a> has their <a href="https://ksan.notion.site/futarchy-implementation">&quot;Futarchy Solver&quot;</a> on Ethereum, and <a href="https://x.com/MetaDAOProject">@MetaDAOProject</a> recently released <a href="https://github.com/metaDAOproject/programs/blob/develop/programs/futarchy/src/state/futarchy_amm.rs">&quot;Futarchy AMM&quot;</a> on Solana. Both arbitrage automatically per-swap.</p>
-<p><a href="https://x.com/percentmarkets">@percentmarkets</a> hasn't implemented this yet, so manual arb opportunities still exist.</p>
-<p>See you in the dark forest.</p>
+<div align="center">
+<p><picture><source type="image/avif" srcset="/blog/modes-of-operation/3ldQW4Hh4P-400.avif 400w"><source type="image/webp" srcset="/blog/modes-of-operation/3ldQW4Hh4P-400.webp 400w"><img loading="lazy" decoding="async" src="/blog/modes-of-operation/3ldQW4Hh4P-400.jpeg" alt="Wanderer above the Sea of Fog by Caspar David Friedrich" width="400" height="512"></picture></p>
+<p><em>Wanderer above the Sea of Fog (1818) by Caspar David Friedrich</em></p>
+</div>
+<p>A <strong>Mode of Operation</strong> is a framework, or set of rules, that you apply to your decision making process.</p>
+<p>Suppose you are a startup founder trying to make a decision whether to build a new product. You've built a few products before and have always catered them to others.</p>
+<p>You've shipped these before and have gotten very little to no usage. Of course, there may be many reasons for the product's lack of traction, but you tell yourself: &quot;I won't spend time building another product unless I personally have use for it&quot;.</p>
+<p>That is a mode of operation! It's like a rule of thumb — a constraint function — that you apply to future decisions to keep you aligned. This time, since you've decided on a mode of operation prior, you'll quickly discard the new product! At least the next product you build will have at least 1 power user (you!).</p>
+<h2 id="practical-decision-making">Practical Decision Making</h2>
+<p>Why do you need this? Why does this need to be said explicitly?</p>
+<p>Humans aren't perfect and neither is their decision making. Your world approximation will never be perfect (unless you're omniscient) so you can't be a perfectly rational decision maker. Indeed, you won't always make the best decision!</p>
+<p>As mentioned in my post on world approximation, the best you can do is push your approximation, or model, of the world towards the truth via better information intake and iterating via feedback loops.</p>
+<p>&quot;That's great, but why do I keep repeating the same mistakes even if I learned it was a mistake before!&quot;</p>
+<p>There are a ton of reasons for this. Here are some off the top of my head:</p>
+<ul>
+<li>You aren't perfectly rational :(</li>
+<li>You (hopefully) have emotions and those cloud judgment</li>
+<li>You are a different person at each &amp; every moment</li>
+<li>You can forget things</li>
+<li>Every decision is different</li>
+<li>Your world model is inaccurate</li>
+</ul>
+<p>&quot;Well this is terrible! Am I always doomed to repeat my failures? What do I do?&quot;</p>
+<p>Well, to start, you should always strive to be the ideal, but you should remember to be compassionate with yourself (&amp; others) when you (or they) fall short! The truth is that world approximations are just models and are also quite intangible — good luck writing it all down!</p>
+<p>A bit more of an actionable hot patch for those mistakes: set a mode of operation.</p>
+<p>If you keep repeating a mistake and can identify the situation that leads to that mistake, make an explicit pact with yourself to always favor a certain decision over another. This serves as another very powerful input for when you have to fall into a similar situation and need to make a decision!</p>
+<p>You might be ravenous and offered a cookie, but since you promised yourself you won't munch sweets, you decline even if you can't remember the reasons why you set those rules at that given moment.</p>
+<p>Of course, this type of &quot;rule of thumb&quot; might also fail due to the aforementioned reasons (aka being human). Also, since every scenario is different, your mode of operation might fail you. If you have an incorrect view of the world, and you make a sweeping generalization as your mode of operation, it will fail you often.</p>
+<p>Modes of operations are just rules we set to try to solidify our learnings about the world. They serve to make your decision making more robust and are an attempt to help you stop falling into the same traps.</p>
+<p>I should note, a mode of operation that isn't explicitly set, but learned passively, is a subset of your world approximation.</p>
+<h2 id="proxies-of-experience">Proxies of Experience</h2>
+<p>Sometimes you receive advice from others or hear about their mode of operation. Perhaps from a friend, professor, essay, or book. You might be inclined to embrace it — especially if they come from a position of some sort of authority (intellectual, wealth, spiritual, etc.).</p>
+<p>Such advice is incredibly valuable. You're gaining a proxy onto someone else's world view. What lesson did they learn from the experiences they had? If you can follow these learnings then you can avoid stumbling into dead-ends of whatever maze you're exploring.</p>
+<p>By reading this essay you are getting a distilled lesson from my learnings. For me, this came from my mistakes of learning how to start-up. Currently we do not have product-market fit, so I would treat anything I say with a grain of salt. If we do achieve product-market fit, I'll point to this essay as likely pivotal to what framework informed my decisions.</p>
+<p>I do, however, think that there is risk involved by adopting such models. Some questions to consider: Is this authority really someone you trust and want to follow? Do you understand why they hold that position? Does their reasoning make sense? Are there any other alternative modes of operation that could be valid for your situation?</p>
+<p>Each individual is different and has a completely different imperfect world-view. You live a different life and have completely different skills. No situations are the same. There is no guarantee that their learnings will be applicable to you. You might be in a completely different maze.</p>
+<p>At the end of the day you need to trust your own judgment!</p>
+<h2 id="personal-note">Personal Note</h2>
+<p>The act of writing this essay is just me explicitly setting a mode of operation to follow and set future modes of operations. They might not need to be explicitly written out, but I am optimistic that intentionally supplementing passive learning (via just making decisions) with explicit frameworks will help weed out some bad decisions.</p>
+<p>I do realize that not everything needs a theory, framework, or explanation. My thoughts can get pretty jumbled and writing them like this often helps me reason about how to model the world.</p>
+<p>I also believe that many of the interesting and hard problems in life are solved through approximation. There are no textbooks for these types of problems.</p>
+<p>The best way to learn to navigate such problems is by doing and learning about the experiences (or lessons) of those who solved variations before you. Making a mistake often teaches you something about the problem but often causes some type of set back.</p>
+<p>I don't think that anyone can give you concrete advice of how to find fulfillment in life. You kinda need to do a bunch of stuff and see what you like or what philosophies you resonate with. Reading and following self-help resources probably doesn't hurt though!</p>
 
-<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/an-ideal-world-approximator/">An Ideal World Approximator</a></li><li class="links-nextprev-next">Next →<br><a href="/blog/modes-of-operation/">Modes of Operation</a></li>
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/decision-market-arbitrage/">Decision Market Arbitrage</a></li>
 </ul>
 
 			</heading-anchors>
@@ -574,7 +586,7 @@ pre[class*="language-diff-"] {
 		<footer>
 		</footer>
 
-		<!-- This page `/blog/decision-market-arbitrage/` was built on 2025-11-18T04:48:04.170Z -->
+		<!-- This page `/blog/modes-of-operation/` was built on 2025-11-18T04:48:04.170Z -->
 		<script type="module" src="/dist/47a5XO4IG2.js"></script>
 	</body>
 </html>

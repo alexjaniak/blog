@@ -5,11 +5,61 @@
   <subtitle>Explore the dark forest with me</subtitle>
   <link href="https://aelix.dev/feed/feed.xml" rel="self" />
   <link href="https://aelix.dev/" />
-  <updated>2025-11-03T00:00:00Z</updated>
+  <updated>2025-11-17T00:00:00Z</updated>
   <id>https://aelix.dev/</id>
   <author>
     <name>Aelix</name>
   </author>
+  <entry>
+    <title>Modes of Operation</title>
+    <link href="https://aelix.dev/blog/modes-of-operation/" />
+    <updated>2025-11-17T00:00:00Z</updated>
+    <id>https://aelix.dev/blog/modes-of-operation/</id>
+    <content type="html">&lt;div align=&quot;center&quot;&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://aelix.dev/blog/modes-of-operation/3ldQW4Hh4P-400.avif 400w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://aelix.dev/blog/modes-of-operation/3ldQW4Hh4P-400.webp 400w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://aelix.dev/blog/modes-of-operation/3ldQW4Hh4P-400.jpeg&quot; alt=&quot;Wanderer above the Sea of Fog by Caspar David Friedrich&quot; width=&quot;400&quot; height=&quot;512&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Wanderer above the Sea of Fog (1818) by Caspar David Friedrich&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;A &lt;strong&gt;Mode of Operation&lt;/strong&gt; is a framework, or set of rules, that you apply to your decision making process.&lt;/p&gt;
+&lt;p&gt;Suppose you are a startup founder trying to make a decision whether to build a new product. You&#39;ve built a few products before and have always catered them to others.&lt;/p&gt;
+&lt;p&gt;You&#39;ve shipped these before and have gotten very little to no usage. Of course, there may be many reasons for the product&#39;s lack of traction, but you tell yourself: &amp;quot;I won&#39;t spend time building another product unless I personally have use for it&amp;quot;.&lt;/p&gt;
+&lt;p&gt;That is a mode of operation! It&#39;s like a rule of thumb — a constraint function — that you apply to future decisions to keep you aligned. This time, since you&#39;ve decided on a mode of operation prior, you&#39;ll quickly discard the new product! At least the next product you build will have at least 1 power user (you!).&lt;/p&gt;
+&lt;h2 id=&quot;practical-decision-making&quot;&gt;Practical Decision Making&lt;/h2&gt;
+&lt;p&gt;Why do you need this? Why does this need to be said explicitly?&lt;/p&gt;
+&lt;p&gt;Humans aren&#39;t perfect and neither is their decision making. Your world approximation will never be perfect (unless you&#39;re omniscient) so you can&#39;t be a perfectly rational decision maker. Indeed, you won&#39;t always make the best decision!&lt;/p&gt;
+&lt;p&gt;As mentioned in my post on world approximation, the best you can do is push your approximation, or model, of the world towards the truth via better information intake and iterating via feedback loops.&lt;/p&gt;
+&lt;p&gt;&amp;quot;That&#39;s great, but why do I keep repeating the same mistakes even if I learned it was a mistake before!&amp;quot;&lt;/p&gt;
+&lt;p&gt;There are a ton of reasons for this. Here are some off the top of my head:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You aren&#39;t perfectly rational :(&lt;/li&gt;
+&lt;li&gt;You (hopefully) have emotions and those cloud judgment&lt;/li&gt;
+&lt;li&gt;You are a different person at each &amp;amp; every moment&lt;/li&gt;
+&lt;li&gt;You can forget things&lt;/li&gt;
+&lt;li&gt;Every decision is different&lt;/li&gt;
+&lt;li&gt;Your world model is inaccurate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;quot;Well this is terrible! Am I always doomed to repeat my failures? What do I do?&amp;quot;&lt;/p&gt;
+&lt;p&gt;Well, to start, you should always strive to be the ideal, but you should remember to be compassionate with yourself (&amp;amp; others) when you (or they) fall short! The truth is that world approximations are just models and are also quite intangible — good luck writing it all down!&lt;/p&gt;
+&lt;p&gt;A bit more of an actionable hot patch for those mistakes: set a mode of operation.&lt;/p&gt;
+&lt;p&gt;If you keep repeating a mistake and can identify the situation that leads to that mistake, make an explicit pact with yourself to always favor a certain decision over another. This serves as another very powerful input for when you have to fall into a similar situation and need to make a decision!&lt;/p&gt;
+&lt;p&gt;You might be ravenous and offered a cookie, but since you promised yourself you won&#39;t munch sweets, you decline even if you can&#39;t remember the reasons why you set those rules at that given moment.&lt;/p&gt;
+&lt;p&gt;Of course, this type of &amp;quot;rule of thumb&amp;quot; might also fail due to the aforementioned reasons (aka being human). Also, since every scenario is different, your mode of operation might fail you. If you have an incorrect view of the world, and you make a sweeping generalization as your mode of operation, it will fail you often.&lt;/p&gt;
+&lt;p&gt;Modes of operations are just rules we set to try to solidify our learnings about the world. They serve to make your decision making more robust and are an attempt to help you stop falling into the same traps.&lt;/p&gt;
+&lt;p&gt;I should note, a mode of operation that isn&#39;t explicitly set, but learned passively, is a subset of your world approximation.&lt;/p&gt;
+&lt;h2 id=&quot;proxies-of-experience&quot;&gt;Proxies of Experience&lt;/h2&gt;
+&lt;p&gt;Sometimes you receive advice from others or hear about their mode of operation. Perhaps from a friend, professor, essay, or book. You might be inclined to embrace it — especially if they come from a position of some sort of authority (intellectual, wealth, spiritual, etc.).&lt;/p&gt;
+&lt;p&gt;Such advice is incredibly valuable. You&#39;re gaining a proxy onto someone else&#39;s world view. What lesson did they learn from the experiences they had? If you can follow these learnings then you can avoid stumbling into dead-ends of whatever maze you&#39;re exploring.&lt;/p&gt;
+&lt;p&gt;By reading this essay you are getting a distilled lesson from my learnings. For me, this came from my mistakes of learning how to start-up. Currently we do not have product-market fit, so I would treat anything I say with a grain of salt. If we do achieve product-market fit, I&#39;ll point to this essay as likely pivotal to what framework informed my decisions.&lt;/p&gt;
+&lt;p&gt;I do, however, think that there is risk involved by adopting such models. Some questions to consider: Is this authority really someone you trust and want to follow? Do you understand why they hold that position? Does their reasoning make sense? Are there any other alternative modes of operation that could be valid for your situation?&lt;/p&gt;
+&lt;p&gt;Each individual is different and has a completely different imperfect world-view. You live a different life and have completely different skills. No situations are the same. There is no guarantee that their learnings will be applicable to you. You might be in a completely different maze.&lt;/p&gt;
+&lt;p&gt;At the end of the day you need to trust your own judgment!&lt;/p&gt;
+&lt;h2 id=&quot;personal-note&quot;&gt;Personal Note&lt;/h2&gt;
+&lt;p&gt;The act of writing this essay is just me explicitly setting a mode of operation to follow and set future modes of operations. They might not need to be explicitly written out, but I am optimistic that intentionally supplementing passive learning (via just making decisions) with explicit frameworks will help weed out some bad decisions.&lt;/p&gt;
+&lt;p&gt;I do realize that not everything needs a theory, framework, or explanation. My thoughts can get pretty jumbled and writing them like this often helps me reason about how to model the world.&lt;/p&gt;
+&lt;p&gt;I also believe that many of the interesting and hard problems in life are solved through approximation. There are no textbooks for these types of problems.&lt;/p&gt;
+&lt;p&gt;The best way to learn to navigate such problems is by doing and learning about the experiences (or lessons) of those who solved variations before you. Making a mistake often teaches you something about the problem but often causes some type of set back.&lt;/p&gt;
+&lt;p&gt;I don&#39;t think that anyone can give you concrete advice of how to find fulfillment in life. You kinda need to do a bunch of stuff and see what you like or what philosophies you resonate with. Reading and following self-help resources probably doesn&#39;t hurt though!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Decision Market Arbitrage</title>
     <link href="https://aelix.dev/blog/decision-market-arbitrage/" />
@@ -53,8 +103,10 @@
     <link href="https://aelix.dev/blog/an-ideal-world-approximator/" />
     <updated>2024-10-19T00:00:00Z</updated>
     <id>https://aelix.dev/blog/an-ideal-world-approximator/</id>
-    <content type="html">&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://aelix.dev/blog/an-ideal-world-approximator/qxM3sjB71c-960.avif 960w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://aelix.dev/blog/an-ideal-world-approximator/qxM3sjB71c-960.webp 960w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://aelix.dev/blog/an-ideal-world-approximator/qxM3sjB71c-960.jpeg&quot; alt=&quot;Newton by William Blake&quot; width=&quot;960&quot; height=&quot;738&quot;&gt;&lt;/picture&gt;
-&lt;em&gt;Newton (1795-1805) by William Blake - The rational measurer attempting to understand the universe&lt;/em&gt;&lt;/p&gt;
+    <content type="html">&lt;div align=&quot;center&quot;&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://aelix.dev/blog/an-ideal-world-approximator/qxM3sjB71c-960.avif 960w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://aelix.dev/blog/an-ideal-world-approximator/qxM3sjB71c-960.webp 960w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://aelix.dev/blog/an-ideal-world-approximator/qxM3sjB71c-960.jpeg&quot; alt=&quot;Newton by William Blake&quot; width=&quot;960&quot; height=&quot;738&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Newton (1795-1805) by William Blake&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;p&gt;This is a reflection of myself as an agent and what control I have to better my decision making. It&#39;s a little reductionist, but I think it gets a lot of good points across.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;From first principles, a rational agent (you) is a being with information intake, an ability to rationally process that information, and the capability to make/execute decisions based on that processing.&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;processing&quot;&gt;Processing&lt;/h2&gt;
