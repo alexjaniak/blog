@@ -61,44 +61,6 @@
 </content>
   </entry>
   <entry>
-    <title>Decision Market Arbitrage</title>
-    <link href="https://aelix.dev/blog/decision-market-arbitrage/" />
-    <updated>2025-11-03T00:00:00Z</updated>
-    <id>https://aelix.dev/blog/decision-market-arbitrage/</id>
-    <content type="html">&lt;img src=&quot;https://aelix.dev/DMA.png&quot; alt=&quot;Decision Market Arbitrage&quot;&gt;
-&lt;p&gt;Ever wondered how to profit from inefficient futarchy markets? Here&#39;s a simple guide to arbitraging decision markets — a mechanism that&#39;s still new enough to have simple alpha.&lt;/p&gt;
-&lt;h2 id=&quot;what-is-futarchy&quot;&gt;What is futarchy?&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://blog.ethereum.org/2014/08/21/introduction-futarchy&quot;&gt;This post by Vitalik&lt;/a&gt; is my favorite resource and offers a good in-depth analysis of the mechanism (including a quick overview of potential issues). &lt;a href=&quot;https://futarchy.guide/&quot;&gt;futarchy.guide&lt;/a&gt; is a pretty cool visualization for &lt;a href=&quot;https://x.com/MetaDAOProject&quot;&gt;@MetaDAOProject&lt;/a&gt; if you aren&#39;t familiar with the conditional vault/AMM architecture.&lt;/p&gt;
-&lt;h2 id=&quot;opportunity-1-when-spot-price-both-pass-and-fail-markets&quot;&gt;Opportunity #1: When spot price &amp;gt; both pass and fail markets&lt;/h2&gt;
-&lt;p&gt;For simplicity, let&#39;s say a decision market for a proposal is being run for &lt;a href=&quot;https://x.com/zcombinatorio&quot;&gt;@zcombinatorio&lt;/a&gt; (with $ZC as the base token and $SOL as the quote token). Spot is trading 1.75 $SOL per $ZC and the conditional markets are trading at 1.25 and 0.75.&lt;/p&gt;
-&lt;img src=&quot;https://aelix.dev/arb-op-1.jpeg&quot; alt=&quot;Arbitrage Opportunity 1&quot;&gt;
-&lt;p&gt;You can:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Split $SOL into $pSOL and $fSOL (conditional tokens)&lt;/li&gt;
-&lt;li&gt;Swap these conditional SOL tokens for conditional $ZC tokens in both markets&lt;/li&gt;
-&lt;li&gt;Merge your conditional $ZC back into regular $ZC&lt;/li&gt;
-&lt;li&gt;Sell the $ZC into $SOL on the spot market for profit&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Through this, you basically buy $ZC in the conditional markets and sell it at a higher price in spot. You can do this until price impact equals the price difference (excluding fees).&lt;/p&gt;
-&lt;p&gt;Assuming no slippage, if you entered with 1 SOL, you can swap into 1.33 $fZC (1/0.75) in the fail conditional market and 0.8 $pZC (1/1.25) in the pass conditional market. After you merge your conditional $ZC, you&#39;ll have min{1.33, 0.8} = 0.8 $ZC total. You can then sell this $ZC for 1.4 $SOL (0.8*1.75). So you would have made a risk-free 40%!&lt;/p&gt;
-&lt;h2 id=&quot;opportunity-2-when-spot-price-both-pass-and-fail-markets&quot;&gt;Opportunity #2: When spot price &amp;lt; both pass and fail markets&lt;/h2&gt;
-&lt;p&gt;The reverse works too - buy spot $ZC, split it, swap for conditional $SOL in both markets, then merge.&lt;/p&gt;
-&lt;img src=&quot;https://aelix.dev/arb-op-2.jpeg&quot; alt=&quot;Arbitrage Opportunity 2&quot;&gt;
-&lt;h2 id=&quot;the-key-insight&quot;&gt;The Key Insight&lt;/h2&gt;
-&lt;p&gt;No arbitrage exists when spot trades between pass and fail prices.&lt;/p&gt;
-&lt;p&gt;This is how the mechanism was designed to work - efficient decision markets should always trade the conditional markets between spot.&lt;/p&gt;
-&lt;p&gt;Think about it: Why would the current price be lower than BOTH the pass scenario AND the fail scenario? Why should it be higher than both?&lt;/p&gt;
-&lt;h2 id=&quot;caveats&quot;&gt;Caveats&lt;/h2&gt;
-&lt;p&gt;In the math for the above example, I avoided slippage. In the graphs, the price impact for all trades is pretty similar.&lt;/p&gt;
-&lt;p&gt;In reality, the LP for the conditional markets will probably be less than that of spot. In fact, a common method to fund decision markets is to share liquidity between the spot and the conditional markets. This means that the conditional markets will just have a fraction of the LP of the spot pool.&lt;/p&gt;
-&lt;p&gt;As such, the price impact for trading the conditional markets will be far greater than for spot, and perceived arbs are most likely smaller in execution.&lt;/p&gt;
-&lt;h2 id=&quot;current-implementations&quot;&gt;Current Implementations&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://x.com/_futarchy&quot;&gt;@_futarchy&lt;/a&gt; has their &lt;a href=&quot;https://ksan.notion.site/futarchy-implementation&quot;&gt;&amp;quot;Futarchy Solver&amp;quot;&lt;/a&gt; on Ethereum, and &lt;a href=&quot;https://x.com/MetaDAOProject&quot;&gt;@MetaDAOProject&lt;/a&gt; recently released &lt;a href=&quot;https://github.com/metaDAOproject/programs/blob/develop/programs/futarchy/src/state/futarchy_amm.rs&quot;&gt;&amp;quot;Futarchy AMM&amp;quot;&lt;/a&gt; on Solana. Both arbitrage automatically per-swap.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://x.com/percentmarkets&quot;&gt;@percentmarkets&lt;/a&gt; hasn&#39;t implemented this yet, so manual arb opportunities still exist.&lt;/p&gt;
-&lt;p&gt;See you in the dark forest.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>An Ideal World Approximator</title>
     <link href="https://aelix.dev/blog/an-ideal-world-approximator/" />
     <updated>2024-10-19T00:00:00Z</updated>
