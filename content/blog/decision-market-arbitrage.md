@@ -2,6 +2,7 @@
 title: Decision Market Arbitrage
 description: Ever wondered how to profit from inefficient futarchy markets? Here's a simple guide to arbitraging decision markets — a mechanism that's still new enough to have simple alpha.
 date: 2025-11-03
+draft: true
 tags:
   - futarchy
   - MEV
