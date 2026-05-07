@@ -49,46 +49,24 @@ const path = Astro.url.pathname;
 	</head>
 	<body>
 		<a class="skip-link" href="#content">Skip to content</a>
-		<div class="site-shell">
-			<aside class="left-rail">
+		<header class="top-header">
+			<div class="header-primary">
+				<div class="site-title">Language Games</div>
 				<nav class="site-nav" aria-label="Primary navigation">
 					<a href="/">Blog</a>
 					<a href="/about/">About</a>
 				</nav>
-				<hr class="rail-divider" />
-				<div class="social-links" aria-label="Contact links">
-					<a href="https://x.com/waniak_" aria-label="X">
-						<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-							<path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41Z" />
-						</svg>
-					</a>
-					<a href="https://www.linkedin.com/in/alexander-janiak" aria-label="LinkedIn">
-						<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-							<path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.86-3.04-1.85 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z" />
-						</svg>
-					</a>
-					<a href="https://www.lesswrong.com/users/aelix" aria-label="LessWrong">
-						<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-							<path d="M12 1.8 2.7 6.95v10.1L12 22.2l9.3-5.15V6.95L12 1.8Zm0 2.55 6.7 3.7-6.7 3.68-6.7-3.68L12 4.35Zm-7.05 5.5 5.98 3.3v6.02l-5.98-3.31V9.85Zm8.12 9.32v-6.02l5.98-3.3v6.01l-5.98 3.31Z" />
-						</svg>
-					</a>
-					<a href="https://aelix.substack.com" aria-label="Substack">
-						<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-							<path d="M22.54 8.24H1.46V5.41h21.08v2.83ZM1.46 10.81V24L12 18.11 22.54 24V10.81H1.46ZM22.54 0H1.46v2.84h21.08V0Z" />
-						</svg>
-					</a>
-				</div>
-			</aside>
-			<div class="content-column">
 				<button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
-					<span class="theme-dot" aria-hidden="true"></span>
 					<span data-theme-label>Dark</span>
+					<span data-theme-symbol aria-hidden="true">☾</span>
 				</button>
-				<main id="content">
-					<slot />
-				</main>
-				<footer class="scroll-footer" aria-hidden="true"></footer>
 			</div>
+		</header>
+		<div class="content-column">
+			<main id="content">
+				<slot />
+			</main>
+			<footer class="scroll-footer" aria-hidden="true"></footer>
 		</div>
 		<script is:inline>
 			(() => {
@@ -99,6 +77,8 @@ const path = Astro.url.pathname;
 					document.documentElement.dataset.theme = theme;
 					button?.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
 					if (label) label.textContent = theme === "dark" ? "Light" : "Dark";
+					const symbol = document.querySelector("[data-theme-symbol]");
+					if (symbol) symbol.textContent = theme === "dark" ? "☼" : "☾";
 					try {
 						localStorage.setItem("theme", theme);
 					} catch {}
