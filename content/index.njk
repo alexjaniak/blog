@@ -3,27 +3,23 @@ const eleventyNavigation = {
 	key: "Home",
 	order: 1
 };
-
-const numberOfLatestPostsToShow = 3;
 ---
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+<article class="home-essay">
+	<header class="article-header">
+		<p class="eyebrow">Aelix</p>
+		<h1>Notes from the dark forest.</h1>
+		<p class="subtitle">Decision markets, practical agency, philosophy, and the occasional mechanism-design rabbit hole.</p>
+	</header>
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
+	<section class="article-body">
+		<p><span class="newthought">Alex Janiak</span> writes about how people and institutions make decisions under uncertainty. The recurring obsession is simple: better world-models, tighter feedback loops, fewer unforced errors.</p>
+		<p>This site keeps the essays close to the surface. No cards, no feeds pretending to be magazines, no algorithmic gloss. Just dated notes, arguments, and artifacts.</p>
+	</section>
 
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p>
-{% endif %}
-
-{# List every content page in the project #}
-{#
-<ul>
-	{%- for entry in collections.all %}
-	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-	{%- endfor %}
-</ul>
-#}
+	<section class="archive-section">
+		<h2>Latest</h2>
+		{% set postslist = collections.posts | recentPosts(3) %}
+		{% include "postslist.njk" %}
+		<p class="archive-link"><a href="/blog/">All essays</a></p>
+	</section>
+</article>

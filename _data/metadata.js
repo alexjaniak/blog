@@ -1,10 +1,10 @@
 export default {
-	title: "Aelix's Blog",
+	title: "Aelix",
 	url: "https://aelix.dev/",
 	language: "en",
-	description: "Explore the dark forest with me.",
+	description: "Essays on decision markets, futarchy, philosophy, and practical agency.",
 	author: {
-		name: "Aelix (Alex Janiak)",
+		name: "Alex Janiak",
 		email: "",
 		url: "https://aelix.dev"
 	}

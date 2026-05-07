@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fffff8"><title>Aelix</title><meta name="description" content="Essays on decision markets, futarchy, philosophy, and practical agency."><link rel="canonical" href="https://aelix.dev/"><link rel="alternate" href="/rss.xml" type="application/rss+xml" title="Aelix RSS"><link rel="icon" href="/og-image.jpg"><meta property="og:title" content="Aelix"><meta property="og:description" content="Essays on decision markets, futarchy, philosophy, and practical agency."><meta property="og:type" content="website"><meta property="og:url" content="https://aelix.dev/"><meta property="og:site_name" content="Aelix"><meta property="og:image" content="/og-image.jpg"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="@waniak_"><script>
+			(() => {
+				try {
+					const stored = localStorage.getItem("theme");
+					const system = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+					document.documentElement.dataset.theme = stored || system;
+				} catch {
+					document.documentElement.dataset.theme = "light";
+				}
+			})();
+		</script><link rel="stylesheet" href="/_astro/Base.Pn1KTQlD.css"></head> <body> <a class="skip-link" href="#content">Skip to content</a> <header class="site-header"> <a class="brand" href="/">Aelix</a> <nav class="site-nav" aria-label="Primary navigation"> <a href="/blog/">Blog</a> <a href="/about/">About</a> <a href="/tags/">Tags</a> </nav> <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false"> <span class="theme-dot" aria-hidden="true"></span> <span data-theme-label>Dark</span> </button> </header> <main id="content">  <h1 class="page-title">Aelix</h1> <p class="subtitle">Notes on decision markets, agency, philosophy, and mechanisms that survive contact with reality.</p> <hr> <p><span class="newthought">Alex Janiak</span> writes about decision-making under uncertainty: futarchy, mechanism design, feedback loops, and the practical art of building better world models.</p> <p>The site is intentionally plain. Essays first, ornament second.</p> <h3>Recent Essays</h3> <ul class="post-list"> <li class="post-item"> <a class="post-item-title" href="/blog/modes-of-operation/">Modes of Operation</a> <p class="post-item-meta">Nov 17</p> <p class="post-item-description">Frameworks to help you make decisions</p> </li><li class="post-item"> <a class="post-item-title" href="/blog/decision-market-arbitrage/">Decision Market Arbitrage</a> <p class="post-item-meta">Nov 3</p> <p class="post-item-description">Ever wondered how to profit from inefficient futarchy markets? Here&#39;s a simple guide to arbitraging decision markets — a mechanism that&#39;s still new enough to have simple alpha.</p> </li><li class="post-item"> <a class="post-item-title" href="/blog/an-ideal-world-approximator/">An Ideal World Approximator</a> <p class="post-item-meta">Oct 19</p> <p class="post-item-description">How to understand the world and make better decisions.</p> </li> </ul>  </main> <footer class="site-footer"> <span>©2024-2026 Alex Janiak. All rights reserved.</span> </footer> <script>
+			(() => {
+				const button = document.querySelector(".theme-toggle");
+				const label = document.querySelector("[data-theme-label]");
+
+				function paint(theme) {
+					document.documentElement.dataset.theme = theme;
+					button?.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+					if (label) label.textContent = theme === "dark" ? "Light" : "Dark";
+					try {
+						localStorage.setItem("theme", theme);
+					} catch {}
+				}
+
+				paint(document.documentElement.dataset.theme || "light");
+				button?.addEventListener("click", () => {
+					paint(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+				});
+			})();
+		</script> </body> </html>

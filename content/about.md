@@ -6,17 +6,17 @@ const eleventyNavigation = {
 ---
 # About
 
-<div style="text-align: center;">
-  <img src="/og-image.jpg" alt="Profile" style="max-width: 200px; width: 100%;" eleventy:ignore>
-  <p>Explore the dark forest with me.</p>
-</div>
+<figure class="profile-figure">
+  <img src="/og-image.jpg" alt="Profile" eleventy:ignore>
+  <figcaption>Explore the dark forest with me.</figcaption>
+</figure>
 
+<span class="newthought">I am Alex Janiak</span>, a Duke computer science and philosophy graduate interested in rational decision-making, mechanism design, and building things that survive contact with reality.
 
-### Education
+## Education
 Duke University (2021-2025)
 - BS Computer Science
 - BA Philosophy
 - Minor Mathematics
 
-
-Contact me on [𝕏 @waniak_](https://x.com/waniak_)
+Contact me on [X @waniak_](https://x.com/waniak_).

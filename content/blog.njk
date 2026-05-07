@@ -1,10 +1,22 @@
 ---js
 const eleventyNavigation = {
-	key: "Archive",
+	key: "Blog",
 	order: 2
 };
 ---
-<h1>Archive</h1>
+<article class="archive-page">
+	<header class="article-header">
+		<p class="eyebrow">Index</p>
+		<h1>Blog</h1>
+		<p class="subtitle">Selected essays, newest first.</p>
+	</header>
 
-{% set postslist = collections.posts %}
-{% include "postslist.njk" %}
+	<section class="archive-section">
+		{% set groupedPosts = collections.posts | groupByMonth %}
+		{%- for group in groupedPosts %}
+		<h3 class="month-heading">{{ group.label }}</h3>
+		{% set postslist = group.posts %}
+		{% include "postslist.njk" %}
+		{%- endfor %}
+	</section>
+</article>

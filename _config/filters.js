@@ -1,6 +1,10 @@
 import { DateTime } from "luxon";
 
 export default function(eleventyConfig) {
+	const sortPostsDesc = posts => {
+		return [...(posts || [])].sort((a, b) => b.date - a.date);
+	};
+
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
 		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
@@ -40,4 +44,27 @@ export default function(eleventyConfig) {
 	eleventyConfig.addFilter("sortAlphabetically", strings =>
 		(strings || []).sort((b, a) => b.localeCompare(a))
 	);
+
+	eleventyConfig.addFilter("recentPosts", (posts, limit = 3) => {
+		return sortPostsDesc(posts).slice(0, limit);
+	});
+
+	eleventyConfig.addFilter("groupByMonth", posts => {
+		const groups = new Map();
+
+		for (const post of sortPostsDesc(posts)) {
+			const label = DateTime.fromJSDate(post.date, { zone: "utc" }).toFormat("LLLL yyyy");
+
+			if (!groups.has(label)) {
+				groups.set(label, {
+					label,
+					posts: [],
+				});
+			}
+
+			groups.get(label).posts.push(post);
+		}
+
+		return Array.from(groups.values());
+	});
 };
