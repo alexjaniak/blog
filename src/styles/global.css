@@ -483,12 +483,28 @@ hr,
 }
 
 .about-tree {
-	display: block;
-	width: min(58vw, 17rem);
+	float: right;
+	width: min(34vw, 17rem);
 	max-width: 17rem;
 	height: auto;
-	margin: 0 auto 1.65rem;
+	margin: 6.2rem 0 1.25rem 2rem;
 	border-radius: 0;
+	shape-outside: url("/about-tree.png");
+	-webkit-shape-outside: url("/about-tree.png");
+	shape-margin: 1rem;
+	-webkit-shape-margin: 1rem;
+	shape-image-threshold: 0.08;
+}
+
+@media (max-width: 640px) {
+	.about-tree {
+		float: none;
+		display: block;
+		width: min(58vw, 17rem);
+		margin: 0 auto 1.5rem;
+		shape-outside: none;
+		-webkit-shape-outside: none;
+	}
 }
 
 .about-section h3 {
