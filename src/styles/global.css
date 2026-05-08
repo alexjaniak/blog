@@ -489,11 +489,10 @@ hr,
 	height: auto;
 	margin: 6.2rem 0 1.25rem 2rem;
 	border-radius: 0;
-	shape-outside: url("/about-tree.png");
-	-webkit-shape-outside: url("/about-tree.png");
-	shape-margin: 1rem;
-	-webkit-shape-margin: 1rem;
-	shape-image-threshold: 0.08;
+	shape-outside: polygon(18% 0, 100% 0, 100% 100%, 12% 100%, 0 72%, 5% 35%);
+	-webkit-shape-outside: polygon(18% 0, 100% 0, 100% 100%, 12% 100%, 0 72%, 5% 35%);
+	shape-margin: 1.65rem;
+	-webkit-shape-margin: 1.65rem;
 }
 
 @media (max-width: 640px) {
