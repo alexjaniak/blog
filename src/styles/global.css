@@ -479,30 +479,53 @@ hr,
 }
 
 .about-intro {
+	--about-tree-gap: clamp(0.45rem, 1vw, 0.75rem);
+	--about-tree-top: clamp(5.8rem, 8vw, 6.8rem);
+	--about-tree-width: clamp(14rem, 34vmin, 17rem);
 	overflow: flow-root;
 }
 
 .about-tree {
 	float: right;
-	width: min(34vw, 17rem);
-	max-width: 17rem;
+	width: var(--about-tree-width);
+	max-width: 100%;
 	height: auto;
-	margin: 6.2rem 0 1.25rem 2rem;
+	margin: var(--about-tree-top) 0 0 var(--about-tree-gap);
 	border-radius: 0;
-	shape-outside: polygon(18% 0, 100% 0, 100% 100%, 12% 100%, 0 72%, 5% 35%);
-	-webkit-shape-outside: polygon(18% 0, 100% 0, 100% 100%, 12% 100%, 0 72%, 5% 35%);
-	shape-margin: 1.65rem;
-	-webkit-shape-margin: 1.65rem;
+	shape-outside: polygon(48% 0, 76% 7%, 66% 15%, 94% 24%, 72% 34%, 90% 43%, 100% 52%, 76% 62%, 94% 72%, 76% 83%, 56% 100%, 18% 100%, 22% 88%, 0 78%, 25% 66%, 7% 56%, 29% 45%, 14% 34%, 34% 24%, 24% 12%);
+	-webkit-shape-outside: polygon(48% 0, 76% 7%, 66% 15%, 94% 24%, 72% 34%, 90% 43%, 100% 52%, 76% 62%, 94% 72%, 76% 83%, 56% 100%, 18% 100%, 22% 88%, 0 78%, 25% 66%, 7% 56%, 29% 45%, 14% 34%, 34% 24%, 24% 12%);
+	shape-outside: url("/about-tree.png");
+	-webkit-shape-outside: url("/about-tree.png");
+	shape-image-threshold: 0.16;
+	shape-margin: var(--about-tree-gap);
+	-webkit-shape-margin: var(--about-tree-gap);
+}
+
+.is-safari .about-tree {
+	float: none;
+	display: block;
+	width: min(58vw, 17rem);
+	margin: 0 auto 1.5rem;
+	shape-outside: none;
+	-webkit-shape-outside: none;
+}
+
+@media (max-width: 800px) {
+	.about-intro {
+		--about-tree-width: clamp(15rem, 46vmin, 19rem);
+		--about-tree-top: clamp(4.8rem, 9vw, 6rem);
+	}
 }
 
 @media (max-width: 640px) {
+	.about-intro {
+		--about-tree-gap: 0.5rem;
+		--about-tree-top: clamp(15.5rem, 70vw, 20rem);
+		--about-tree-width: clamp(13.5rem, 58vmin, 17rem);
+	}
+
 	.about-tree {
-		float: none;
-		display: block;
-		width: min(58vw, 17rem);
-		margin: 0 auto 1.5rem;
-		shape-outside: none;
-		-webkit-shape-outside: none;
+		margin-bottom: 0;
 	}
 }
 

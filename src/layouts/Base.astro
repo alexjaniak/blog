@@ -107,6 +107,12 @@ const jsonLd = {
 		<script is:inline>
 			(() => {
 				try {
+					const ua = navigator.userAgent;
+					const isSafari = navigator.vendor.includes("Apple")
+						&& /Safari/.test(ua)
+						&& !/(Chrome|Chromium|CriOS|FxiOS|EdgiOS|OPiOS|Android)/.test(ua);
+					if (isSafari) document.documentElement.classList.add("is-safari");
+
 					const stored = localStorage.getItem("theme");
 					const system = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 					document.documentElement.dataset.theme = stored || system;

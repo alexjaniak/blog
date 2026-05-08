@@ -46,4 +46,36 @@ import Base from "../layouts/Base.astro";
 			</a>
 		</div>
 	</section>
+
+	<script is:inline>
+		(() => {
+			const root = document.documentElement;
+			const intro = document.querySelector(".about-intro");
+			const tree = document.querySelector(".about-tree");
+			if (!intro || !tree || root.classList.contains("is-safari")) return;
+
+			let frame = 0;
+
+			function measure() {
+				cancelAnimationFrame(frame);
+				frame = requestAnimationFrame(() => {
+					const paragraphs = intro.querySelectorAll("p");
+					if (!paragraphs.length) return;
+
+					const first = paragraphs[0].getBoundingClientRect();
+					const last = paragraphs[paragraphs.length - 1].getBoundingClientRect();
+					const textHeight = Math.max(0, last.bottom - first.top);
+					const treeHeight = tree.getBoundingClientRect().height;
+					const top = Math.max(0, textHeight - treeHeight);
+
+					intro.style.setProperty("--about-tree-top", `${top}px`);
+				});
+			}
+
+			window.addEventListener("load", measure, { once: true });
+			window.addEventListener("resize", measure);
+			if (document.fonts) document.fonts.ready.then(measure);
+			measure();
+		})();
+	</script>
 </Base>
