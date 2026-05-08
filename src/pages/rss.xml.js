@@ -5,7 +5,7 @@ export async function GET(context) {
 	const posts = await getPublishedPosts();
 
 	return rss({
-		title: "Aelix",
+		title: "Language Games | Alex Janiak's Blog",
 		description: "Essays on decision markets, futarchy, philosophy, and practical agency.",
 		site: context.site,
 		items: posts.map((post) => ({
