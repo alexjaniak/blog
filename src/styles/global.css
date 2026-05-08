@@ -483,26 +483,12 @@ hr,
 }
 
 .about-tree {
-	float: right;
-	width: min(34vw, 17rem);
+	display: block;
+	width: min(58vw, 17rem);
 	max-width: 17rem;
 	height: auto;
-	margin: 6.2rem 0 1.25rem 2rem;
+	margin: 0 auto 1.65rem;
 	border-radius: 0;
-	shape-outside: url("/about-tree.png");
-	-webkit-shape-outside: url("/about-tree.png");
-	shape-margin: 1rem;
-	-webkit-shape-margin: 1rem;
-	shape-image-threshold: 0.08;
-}
-
-@supports (-webkit-hyphens: none) and (not (-moz-appearance: none)) {
-	.about-tree {
-		shape-outside: inset(0 round 0);
-		-webkit-shape-outside: inset(0 round 0);
-		margin-top: 4.6rem;
-		margin-bottom: 2.25rem;
-	}
 }
 
 .about-section h3 {
@@ -739,13 +725,7 @@ pre {
 	}
 
 	.about-tree {
-		float: right;
-		width: min(44vw, 10.5rem);
-		margin: 6.8rem 0 0.75rem 1.25rem;
-		shape-outside: url("/about-tree.png");
-		-webkit-shape-outside: url("/about-tree.png");
-		shape-margin: 0.7rem;
-		-webkit-shape-margin: 0.7rem;
-		shape-image-threshold: 0.08;
+		width: min(66vw, 13rem);
+		margin-bottom: 1.35rem;
 	}
 }
