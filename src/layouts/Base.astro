@@ -1,0 +1,102 @@
+---
+import "../styles/global.css";
+
+type Props = {
+	title?: string;
+	description?: string;
+};
+
+const {
+	title = "Aelix's Blog",
+	description = "Essays on decision markets, futarchy, philosophy, and practical agency.",
+} = Astro.props;
+
+const pageTitle = title === "Aelix's Blog" ? title : `${title} | Aelix's Blog`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://aelix.dev").toString();
+const path = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#fffff8" />
+		<title>{pageTitle}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<link rel="alternate" href="/rss.xml" type="application/rss+xml" title="Aelix RSS" />
+		<link rel="icon" href="/favicon.png" type="image/png" />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:site_name" content="Aelix" />
+		<meta property="og:image" content="/og-image.jpg" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:creator" content="@waniak_" />
+		<script is:inline>
+			(() => {
+				try {
+					const stored = localStorage.getItem("theme");
+					const system = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+					document.documentElement.dataset.theme = stored || system;
+				} catch {
+					document.documentElement.dataset.theme = "light";
+				}
+			})();
+		</script>
+	</head>
+	<body>
+		<a class="skip-link" href="#content">Skip to content</a>
+		<header class="top-header">
+			<div class="header-primary">
+				<a class="site-title" href="/">Language Games</a>
+				<nav class="site-nav" aria-label="Primary navigation">
+					<a href="/">Blog</a>
+					<a href="/about/">About</a>
+				</nav>
+				<button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+					<span data-theme-label>Dark</span>
+					<span class="theme-symbol" data-theme-symbol aria-hidden="true">
+						<svg viewBox="0 0 12 12">
+							<path d="M3.35 1a5 5 0 1 1 0 10 5.776 5.776 0 0 0 2.887-5A5.776 5.776 0 0 0 3.35 1Z" />
+						</svg>
+					</span>
+				</button>
+			</div>
+		</header>
+		<div class="content-column">
+			<main id="content">
+				<slot />
+			</main>
+			<footer class="scroll-footer" aria-hidden="true"></footer>
+		</div>
+		<script is:inline>
+			(() => {
+				const button = document.querySelector(".theme-toggle");
+				const label = document.querySelector("[data-theme-label]");
+
+				function paint(theme) {
+					document.documentElement.dataset.theme = theme;
+					button?.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+					if (label) label.textContent = theme === "dark" ? "Light" : "Dark";
+					const symbol = document.querySelector("[data-theme-symbol]");
+					if (symbol) {
+						symbol.innerHTML = theme === "dark"
+							? '<svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="0.9" class="theme-symbol-fill" /><circle cx="6" cy="6" r="5" /></svg>'
+							: '<svg viewBox="0 0 12 12"><path d="M3.35 1a5 5 0 1 1 0 10 5.776 5.776 0 0 0 2.887-5A5.776 5.776 0 0 0 3.35 1Z" /></svg>';
+					}
+					try {
+						localStorage.setItem("theme", theme);
+					} catch {}
+				}
+
+				paint(document.documentElement.dataset.theme || "light");
+				button?.addEventListener("click", () => {
+					paint(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+				});
+			})();
+		</script>
+	</body>
+</html>
