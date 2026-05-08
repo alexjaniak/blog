@@ -6,7 +6,7 @@ export async function GET(context) {
 
 	return rss({
 		title: "Language Games | Alex Janiak's Blog",
-		description: "Essays on decision markets, futarchy, philosophy, and practical agency.",
+		description: "Essays by Alex Janiak on AI, forecasting, futarchy, decision markets, mechanism design, game theory, and decision-making under uncertainty.",
 		site: context.site,
 		items: posts.map((post) => ({
 			title: post.data.title,

@@ -8,13 +8,73 @@ type Props = {
 
 const {
 	title = "Language Games",
-	description = "Essays on decision markets, futarchy, philosophy, and practical agency.",
+	description = "Alex Janiak writes Language Games: essays on AI, forecasting, futarchy, decision markets, mechanism design, game theory, and decision-making under uncertainty.",
 } = Astro.props;
 
 const siteName = "Language Games | Alex Janiak's Blog";
 const pageTitle = title === "Language Games" ? siteName : `${title} | ${siteName}`;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://aelix.dev").toString();
+const absoluteOgImage = new URL("/og-image.jpg", Astro.site ?? "https://aelix.dev").toString();
 const path = Astro.url.pathname;
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Person",
+			"@id": "https://aelix.dev/#alex-janiak",
+			name: "Alex Janiak",
+			alternateName: ["Alexander Janiak", "Aelix", "aelix0x"],
+			url: "https://aelix.dev/",
+			image: absoluteOgImage,
+			jobTitle: "Startup founder",
+			description: "Alex Janiak is a startup founder building AI forecasting systems for better decision-making under uncertainty.",
+			alumniOf: {
+				"@type": "CollegeOrUniversity",
+				name: "Duke University",
+			},
+			knowsAbout: [
+				"AI",
+				"forecasting",
+				"futarchy",
+				"decision markets",
+				"prediction markets",
+				"mechanism design",
+				"game theory",
+				"systems engineering",
+				"decision-making under uncertainty",
+				"Rust",
+				"Python",
+			],
+			sameAs: [
+				"https://github.com/alexjaniak",
+				"https://x.com/aelix0x",
+				"https://www.linkedin.com/in/alexander-janiak/",
+				"https://www.lesswrong.com/users/alexjaniak",
+				"https://substack.com/@aelix0x",
+			],
+		},
+		{
+			"@type": "WebSite",
+			"@id": "https://aelix.dev/#website",
+			name: siteName,
+			alternateName: "Language Games",
+			url: "https://aelix.dev/",
+			description,
+			author: { "@id": "https://aelix.dev/#alex-janiak" },
+			publisher: { "@id": "https://aelix.dev/#alex-janiak" },
+			inLanguage: "en-US",
+		},
+		{
+			"@type": "Blog",
+			"@id": "https://aelix.dev/#blog",
+			name: "Language Games",
+			url: "https://aelix.dev/",
+			description,
+			author: { "@id": "https://aelix.dev/#alex-janiak" },
+			inLanguage: "en-US",
+		},
+	],
+};
 ---
 
 <!doctype html>
@@ -25,6 +85,9 @@ const path = Astro.url.pathname;
 		<meta name="theme-color" content="#fffff8" />
 		<title>{pageTitle}</title>
 		<meta name="description" content={description} />
+		<meta name="author" content="Alex Janiak" />
+		<meta name="keywords" content="Alex Janiak, Alexander Janiak, Aelix, aelix0x, AI, forecasting, futarchy, decision markets, prediction markets, mechanism design, game theory, decision-making under uncertainty, systems engineering, Duke University, Rust, Python" />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
 		<link rel="canonical" href={canonical} />
 		<link rel="alternate" href="/rss.xml" type="application/rss+xml" title="Language Games RSS" />
 		<link rel="icon" href="/favicon.png" type="image/png" />
@@ -33,9 +96,14 @@ const path = Astro.url.pathname;
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonical} />
 		<meta property="og:site_name" content={siteName} />
-		<meta property="og:image" content="/og-image.jpg" />
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:creator" content="@waniak_" />
+		<meta property="og:image" content={absoluteOgImage} />
+		<meta property="og:image:alt" content="Language Games by Alex Janiak" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:creator" content="@aelix0x" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={absoluteOgImage} />
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 		<script is:inline>
 			(() => {
 				try {
