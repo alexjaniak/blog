@@ -83,7 +83,7 @@ html {
 	background: var(--background);
 	color: var(--text);
 	font-family: var(--serif);
-	font-size: 17px;
+	font-size: 18px;
 }
 
 body {
@@ -110,7 +110,7 @@ body {
 .top-header {
 	width: min(760px, 100%);
 	margin: 0 auto;
-	padding: 2.4rem 0 5.2rem;
+	padding: 2.4rem 0 3.6rem;
 }
 
 .header-primary {
@@ -125,7 +125,7 @@ body {
 	background: none;
 	text-shadow: none;
 	text-decoration: none;
-	font-size: 1.42rem;
+	font-size: 1.52rem;
 	font-weight: 700;
 	letter-spacing: -0.015em;
 }
@@ -143,7 +143,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	gap: 1.2rem;
-	font-size: 1.08rem;
+	font-size: 1.14rem;
 	font-weight: 400;
 	text-align: center;
 }
@@ -209,7 +209,7 @@ body {
 	color: var(--text);
 	cursor: pointer;
 	font-family: inherit;
-	font-size: 1.08rem;
+	font-size: 1.14rem;
 	line-height: 1;
 	padding: 0;
 	width: max-content;
@@ -281,7 +281,7 @@ pre {
 
 h1 {
 	margin: 0 0 1.25rem;
-	font-size: 2.7rem;
+	font-size: 2.85rem;
 	font-weight: 700;
 	letter-spacing: -0.025em;
 	line-height: 1;
@@ -293,7 +293,7 @@ h1 {
 
 h2 {
 	margin: 3rem 0 1rem;
-	font-size: 1.75rem;
+	font-size: 1.85rem;
 	font-style: italic;
 	font-weight: 700;
 	line-height: 1.1;
@@ -301,7 +301,7 @@ h2 {
 
 h3 {
 	margin: 2.2rem 0 0.75rem;
-	font-size: 1.38rem;
+	font-size: 1.48rem;
 	font-style: italic;
 	font-weight: 700;
 	line-height: 1.12;
@@ -309,8 +309,8 @@ h3 {
 
 p,
 li {
-	font-size: 1.18rem;
-	line-height: 1.78rem;
+	font-size: 1.22rem;
+	line-height: 1.88rem;
 }
 
 p {
@@ -332,9 +332,9 @@ li {
 
 .subtitle {
 	color: var(--muted);
-	font-size: 1.18rem;
+	font-size: 1.22rem;
 	font-style: normal;
-	line-height: 1.78rem;
+	line-height: 1.88rem;
 	margin-top: 0.35rem;
 	margin-bottom: 1.9rem;
 }
@@ -404,7 +404,7 @@ hr,
 
 .post-item-title {
 	display: inline-block;
-	font-size: 1.48rem;
+	font-size: 1.58rem;
 	font-weight: 700;
 	line-height: 1.25;
 	background: none;
@@ -428,8 +428,8 @@ hr,
 
 .post-item-description {
 	color: var(--muted);
-	font-size: 1.05rem;
-	line-height: 1.52;
+	font-size: 1.1rem;
+	line-height: 1.6;
 	margin: 0.75rem 0 0;
 }
 
@@ -458,8 +458,8 @@ hr,
 	display: block;
 	color: var(--muted);
 	font-family: var(--old-style);
-	font-size: 1.18rem;
-	line-height: 1.78rem;
+	font-size: 1.22rem;
+	line-height: 1.88rem;
 	margin-top: 0.2rem;
 }
 
@@ -476,11 +476,15 @@ hr,
 	margin-top: 3.4rem;
 }
 
+.about-intro {
+	overflow: flow-root;
+}
+
 .about-tree {
 	float: right;
 	width: min(34vw, 17rem);
 	max-width: 17rem;
-	margin: -0.4rem 0 1.25rem 1.65rem;
+	margin: 6.6rem 0 1.25rem 1.65rem;
 	border-radius: 0;
 	shape-outside: url("/about-tree.png");
 	shape-margin: 0.85rem;
@@ -630,24 +634,45 @@ pre {
 	}
 
 	.top-header {
-		padding: 1.5rem 0 3.5rem;
+		padding: 1.25rem 0 0.65rem;
 	}
 
 	.header-primary {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1rem;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 0.9rem;
+	}
+
+	.site-title {
+		grid-column: 1 / -1;
+	}
+
+	.site-nav {
+		grid-row: 2;
+	}
+
+	.theme-toggle {
+		grid-row: 2;
+		justify-self: end;
+		align-self: center;
+	}
+}
+
+@media (max-width: 430px) {
+	.top-header {
+		padding-bottom: 0.45rem;
+	}
+
+	.header-primary {
+		grid-template-columns: 1fr auto;
+	}
+
+	.site-title {
+		grid-column: 1 / -1;
 	}
 
 	.social-links {
 		width: auto;
-	}
-
-	.about-tree {
-		float: none;
-		width: min(100%, 15rem);
-		margin: 0 auto 2rem;
-		shape-outside: none;
 	}
 
 	.content-column {
@@ -655,12 +680,16 @@ pre {
 	}
 
 	h1 {
-		font-size: 2.2rem;
+		font-size: 2.35rem;
 	}
 
 	.post-item-head {
 		grid-template-columns: 1fr;
 		gap: 0.25rem;
+	}
+
+	.post-item-date {
+		grid-column: auto;
 	}
 
 	.post-header {
@@ -679,12 +708,26 @@ pre {
 
 	p,
 	li {
-		font-size: 1.08rem;
-		line-height: 1.62rem;
+		font-size: 1.12rem;
+		line-height: 1.7rem;
 	}
 
 	.post-content > p:first-of-type:first-letter {
 		font-size: 4.7em;
 		margin-right: 0.42rem;
+	}
+}
+
+@media (max-width: 420px) {
+	.top-header {
+		padding-bottom: 0.15rem;
+	}
+
+	.about-tree {
+		float: right;
+		width: min(44vw, 10.5rem);
+		margin: 6.8rem 0 0.75rem 1rem;
+		shape-outside: url("/about-tree.png");
+		shape-margin: 0.55rem;
 	}
 }
