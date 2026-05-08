@@ -7,12 +7,11 @@ tags:
   - philosophy
 ---
 
-<figure class="image-plate image-plate-newton">
+<figure class="image-plate">
   <picture>
-    <source srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Newton-WilliamBlake.jpg/960px-Newton-WilliamBlake.jpg">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Newton-WilliamBlake.jpg/960px-Newton-WilliamBlake.jpg" alt="Newton by William Blake">
+    <source srcset="/ideal-world-tree.png">
+    <img src="/ideal-world-tree.png" alt="Windswept tree">
   </picture>
-  <figcaption>Newton (1795-1805) by William Blake</figcaption>
 </figure>
 
 This is a reflection of myself as an agent and what control I have to better my decision making. It's a little reductionist, but I think it gets a lot of good points across.

@@ -9,10 +9,9 @@ tags:
 
 <figure class="image-plate">
   <picture>
-    <source srcset="https://commons.wikimedia.org/wiki/Special:Redirect/file/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg">
-    <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg" alt="Wanderer above the Sea of Fog by Caspar David Friedrich">
+    <source srcset="/windswept.png">
+    <img src="/windswept.png" alt="Windswept tree branch">
   </picture>
-  <figcaption>Wanderer above the Sea of Fog (1818) by Caspar David Friedrich</figcaption>
 </figure>
 
 A **Mode of Operation** is a framework, or set of rules, that you apply to your decision making process.
