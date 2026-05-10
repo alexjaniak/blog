@@ -1,6 +1,6 @@
 ---
-title: What are decision markets?
-description: Decision markets promise to extend prediction markets from forecasting outcomes to informing decisions. After spending significant time in this space, I think the current implementations fail outside a few narrow cases — and it comes down to two structural problems.
+title: Where are all the decision markets?
+description: Practical Limitations of Decision Markets
 date: 2026-05-10
 tags:
   - forecasting
