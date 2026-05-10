@@ -1,6 +1,6 @@
 ---
-title: Practical Limitations of Decision Markets
-description: Where are all the decision markets?
+title: Where are all the Decision Markets?
+description: On the practical limitations of decision markets
 date: 2026-05-10
 tags:
   - forecasting
