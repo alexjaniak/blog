@@ -23,9 +23,9 @@ It's an elegant idea. If prediction markets are good at aggregating distributed 
 
 The past several years have brought a wave of experiments trying to put this into practice. Today, [MetaDAO](https://www.metadao.fi) runs futarchy-style governance for startups, using token price as the performance indicator (proposals only pass when markets predict they'll improve it). [Combinator](https://www.combinator.trade), a decision market infrastructure protocol, operates similarly, letting anyone run these markets for themselves.
 
-After spending significant time in this space, I believe the current implementations of decision markets fail to deliver outside of a few narrow market types, and it comes down to two structural problems: a liquidity problem and an architecture problem.
+After spending significant time in this space, I believe the current implementations of decision markets fail to deliver outside of a few narrow market types, and it comes down to three structural problems: a trader problem, a private information problem, and a liquidity problem.
 
-## The trader & liquidity problem
+## The trader, private information & liquidity problem
 
 For a market to generate a useful price signal, you need informed traders. To attract traders, you need to stake enough capital. The [Fifty Cent Dollars piece on Minimum Viable Liquidity](https://fiftycentdollars.substack.com/p/minimum-viable-liquidity) puts a name to this threshold: the MVL is the floor below which a market doesn't attract enough informed trading activity to price accurately.
 
