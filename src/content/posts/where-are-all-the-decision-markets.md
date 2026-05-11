@@ -43,7 +43,7 @@ That said, decision markets aren't useless at the organizational level. There ar
 
 ## The architecture problem
 
-The current approach to decision markets uses a **conditional futures** architecture. You create two conditional markets: "what will the KPI be if we take action A?" and "what will the KPI be if we take action B?" The higher conditional price indicates which action the market believes will produce better results.
+The current approach to decision markets uses a **conditional futures** architecture. You create two conditional markets: "what will the KPI be if we do nothing?" and "what will the KPI be if we take action A?" The higher conditional price indicates which option the market believes will produce better results.
 
 MetaDAO and Combinator both use a version of this, with token price as the KPI. The logic: token price aggregates all relevant information about the protocol's health, similar to how equity prices aggregate views about a company's value.
 
