@@ -17,7 +17,7 @@ tags:
   </picture>
 </figure>
 
-Decision markets aim to extend prediction markets from forecasting outcomes to informing decisions. The core idea stems from Robin Hanson's 2000 proposal for [futarchy](https://mason.gmu.edu/~rhanson/futarchy.html). The mechanism: if a company, government, or institution agrees on a metric of success, prediction markets can determine which policy or action is most likely to improve that metric.
+Decision markets aim to extend prediction markets from forecasting outcomes to informing decisions. The core idea stems from Robin Hanson's proposal for [futarchy](https://mason.gmu.edu/~rhanson/futarchy.html) & [policy markets](https://mason.gmu.edu/~rhanson/policymarkets.html). The mechanism: if a company, government, or institution agrees on a metric of success, prediction markets can determine which policy or action is most likely to improve that metric.
 
 It's an elegant idea. If prediction markets are good at aggregating distributed information about future events, they should, in theory, be good at aggregating wisdom about which choices lead to better outcomes.
 
@@ -63,4 +63,4 @@ The first is using AI forecasters to reduce the MVL floor. The most expensive pa
 
 The second is returning to a more classical prediction market structure: rather than conditional futures on a noisy KPI, run combinatorial markets directly on the relevant question. "Will this specific KPI increase if we take this decision?" is a tractable prediction market question. It's less information-dense per market than the conditional futures approach (you give up some precision), but it's legible to traders and sidesteps most of the architecture problems described above.
 
-More on both of these soon.
+I'll write more on both of these separately.
