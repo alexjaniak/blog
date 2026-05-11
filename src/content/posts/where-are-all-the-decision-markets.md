@@ -23,9 +23,9 @@ It's an elegant idea. If prediction markets are good at aggregating distributed 
 
 The past several years have brought a wave of experiments trying to put this into practice. Today, [MetaDAO](https://www.metadao.fi) runs futarchy-style governance for startups, using token price as the performance indicator (proposals only pass when markets predict they'll improve it). [Combinator](https://www.combinator.trade), a decision market infrastructure protocol, operates similarly, letting anyone run these markets for themselves.
 
-After spending significant time in this space, I believe the current implementations of decision markets fail to deliver outside of a few narrow market types, and it comes down to three structural problems: a trader problem, a private information problem, and a liquidity problem.
+After spending significant time in this space, I believe the current implementations of decision markets fail to deliver outside of a few narrow market types, and it comes down to two structural problems: a lack of informed traders and an overly-complicated architecture.
 
-## The trader, private information & liquidity problem
+## The trader problem
 
 For a market to generate a useful price signal, you need informed traders. To attract traders, you need to stake enough capital. The [Fifty Cent Dollars piece on Minimum Viable Liquidity](https://fiftycentdollars.substack.com/p/minimum-viable-liquidity) puts a name to this threshold: the MVL is the floor below which a market doesn't attract enough informed trading activity to price accurately.
 
@@ -43,9 +43,9 @@ That said, decision markets aren't useless at the organizational level. There ar
 
 ## The architecture problem
 
-The current approach to decision markets uses a **conditional futures** architecture. You create two conditional markets: "what will the KPI be if we do nothing?" and "what will the KPI be if we take action A?" The higher conditional price indicates which option the market believes will produce better results.
+The current approach to decision markets uses a **conditional futures** architecture. You create two conditional markets: "what will the KPI be if we take action A?" and "what will the KPI be if we don't do action A". If these markets are priced correctly, they should reveal whether "action A" will improve KPI and by how much. 
 
-MetaDAO and Combinator both use a version of this, with token price as the KPI. The logic: token price aggregates all relevant information about the protocol's health, similar to how equity prices aggregate views about a company's value.
+MetaDAO and Combinator both use a version of this, using a crypto protocol's token price as the KPI. The logic: token price aggregates all relevant information about the protocol's health, similar to how equity prices aggregate views about a company's value.
 
 In practice, this gets dicey. A token's price reflects everything the market believes about the protocol: macro sentiment, unrelated news, and general market inefficiency. You might correctly predict that a specific decision will improve fundamentals and still lose money because the token moves against you for reasons entirely unrelated to that decision. This heavily disincentivizes the rational, informed trading the mechanism depends on.
 
