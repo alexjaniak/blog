@@ -59,7 +59,7 @@ I don't think decision markets are fundamentally broken. I think the implementat
 
 Two directions look genuinely promising.
 
-The first is using AI forecasters to reduce the MVL floor. The most expensive part of running any prediction market is attracting informed traders. If AI forecasters can participate as automated market makers, synthesizing available information and providing initial price discovery, the minimum viable threshold drops substantially. This doesn't replace human traders, but it makes thin markets viable that otherwise wouldn't be.
+The first is using AI forecasters to reduce the MVL floor. The most expensive part of running any prediction market is attracting informed traders. If AI forecasters can participate as automated market makers, synthesizing available information and providing initial price discovery, the minimum viable threshold drops substantially.
 
 The second is returning to a more classical prediction market structure: rather than conditional futures on a noisy KPI, run combinatorial markets directly on the relevant question. "Will this specific KPI increase if we take this decision?" is a tractable prediction market question. It's less information-dense per market than the conditional futures approach (you give up some precision), but it's legible to traders and sidesteps most of the architecture problems described above.
 
