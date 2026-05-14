@@ -12,7 +12,12 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+const tocHeadings = headings.filter((heading) => heading.depth === 2);
+const tocItems = [
+	{ slug: "post-title", text: post.data.title },
+	...tocHeadings.map((heading) => ({ slug: heading.slug, text: heading.text })),
+];
 const postUrl = new URL(`/blog/${post.id}/`, Astro.site ?? "https://aelix.dev").toString();
 const postJsonLd = {
 	"@context": "https://schema.org",
@@ -44,17 +49,91 @@ const postJsonLd = {
 };
 ---
 
-<Base title={post.data.title} description={post.data.description}>
+<Base title={post.data.title} description={post.data.description} contentClass="content-column post-page-column">
 	<script type="application/ld+json" set:html={JSON.stringify(postJsonLd)} />
-	<article>
-		<header class="post-header">
-			<h1 class="page-title">{post.data.title}</h1>
-			{post.data.description && <p class="subtitle">{post.data.description}</p>}
-			<time class="post-date" datetime={post.data.date.toISOString()}>{formatLongDate(post.data.date)}</time>
-		</header>
-		<div class="post-content">
-			<Content />
-		</div>
-		<div class="post-endmark" aria-hidden="true">*</div>
-	</article>
+	<div class="post-layout">
+		{
+			tocHeadings.length > 0 && (
+				<aside class="post-toc" aria-label="Post sections" data-scroll-toc>
+					<div class="post-toc-rail" aria-hidden="true">
+						<span data-scroll-toc-progress></span>
+					</div>
+					<nav>
+						{tocItems.map((item) => (
+							<a href={`#${item.slug}`} data-toc-target={item.slug}>
+								<span class="post-toc-marker" aria-hidden="true"></span>
+								<span class="post-toc-text">{item.text}</span>
+							</a>
+						))}
+					</nav>
+				</aside>
+			)
+		}
+		<article>
+			<header class="post-header">
+				<h1 id="post-title" class="page-title">{post.data.title}</h1>
+				{post.data.description && <p class="subtitle">{post.data.description}</p>}
+				<time class="post-date" datetime={post.data.date.toISOString()}>{formatLongDate(post.data.date)}</time>
+			</header>
+			<div class="post-content">
+				<Content />
+			</div>
+			<div class="post-endmark" aria-hidden="true">*</div>
+		</article>
+	</div>
+	<script>
+		const toc = document.querySelector("[data-scroll-toc]");
+		const progress = toc?.querySelector("[data-scroll-toc-progress]");
+		const links = Array.from(toc?.querySelectorAll("[data-toc-target]") ?? []);
+		const headingsById = new Map(
+			links
+				.map((link) => {
+					const id = link.getAttribute("data-toc-target");
+					const heading = id ? document.getElementById(id) : null;
+					return heading ? [id, heading] : null;
+				})
+				.filter(Boolean)
+		);
+
+		function updateToc() {
+			if (!toc || !progress || links.length === 0) return;
+
+			const viewportLine = Math.min(window.innerHeight * 0.38, 320);
+			const scrollable = Math.max(
+				document.documentElement.scrollHeight - window.innerHeight,
+				1
+			);
+			const tocHeight = toc.clientHeight;
+			let activeIndex = 0;
+
+			links.forEach((link, index) => {
+				const heading = headingsById.get(link.getAttribute("data-toc-target"));
+				const isPassed = heading ? heading.getBoundingClientRect().top <= viewportLine : false;
+				const headingTop = heading
+					? heading.getBoundingClientRect().top + window.scrollY
+					: 0;
+				const headingProgress = Math.min(Math.max((headingTop - viewportLine) / scrollable, 0), 1);
+				const labelY = Math.min(Math.max(headingProgress * tocHeight, 18), tocHeight - 18);
+
+				link.style.setProperty("--toc-y", `${labelY}px`);
+				link.classList.toggle("is-passed", isPassed);
+				link.removeAttribute("aria-current");
+				if (isPassed) activeIndex = index;
+			});
+
+			links.forEach((link, index) => {
+				const isActive = index === activeIndex;
+				link.classList.toggle("is-active", isActive);
+				if (isActive) link.setAttribute("aria-current", "location");
+			});
+
+			const progressRatio = Math.min(Math.max(window.scrollY / scrollable, 0), 1);
+			progress.style.height = `${progressRatio * tocHeight}px`;
+		}
+
+		updateToc();
+		window.addEventListener("scroll", updateToc, { passive: true });
+		window.addEventListener("resize", updateToc);
+		window.addEventListener("load", updateToc);
+	</script>
 </Base>

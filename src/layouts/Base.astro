@@ -4,11 +4,13 @@ import "../styles/global.css";
 type Props = {
 	title?: string;
 	description?: string;
+	contentClass?: string;
 };
 
 const {
 	title = "Language Games",
 	description = "Alex Janiak writes Language Games: essays on AI, forecasting, futarchy, decision markets, mechanism design, game theory, and decision-making under uncertainty.",
+	contentClass = "content-column",
 } = Astro.props;
 
 const siteName = "Language Games | Alex Janiak's Blog";
@@ -141,7 +143,7 @@ const jsonLd = {
 				</button>
 			</div>
 		</header>
-		<div class="content-column">
+		<div class={contentClass}>
 			<main id="content">
 				<slot />
 			</main>
