@@ -47,10 +47,9 @@ import Base from "../layouts/Base.astro";
 
 	<script is:inline>
 		(() => {
-			const root = document.documentElement;
 			const intro = document.querySelector(".about-intro");
 			const tree = document.querySelector(".about-tree");
-			if (!intro || !tree || root.classList.contains("is-safari")) return;
+			if (!intro || !tree) return;
 
 			let frame = 0;
 

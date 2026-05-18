@@ -641,20 +641,8 @@ hr,
 	border-radius: 0;
 	shape-outside: polygon(48% 0, 76% 7%, 66% 15%, 94% 24%, 72% 34%, 90% 43%, 100% 52%, 76% 62%, 94% 72%, 76% 83%, 56% 100%, 18% 100%, 22% 88%, 0 78%, 25% 66%, 7% 56%, 29% 45%, 14% 34%, 34% 24%, 24% 12%);
 	-webkit-shape-outside: polygon(48% 0, 76% 7%, 66% 15%, 94% 24%, 72% 34%, 90% 43%, 100% 52%, 76% 62%, 94% 72%, 76% 83%, 56% 100%, 18% 100%, 22% 88%, 0 78%, 25% 66%, 7% 56%, 29% 45%, 14% 34%, 34% 24%, 24% 12%);
-	shape-outside: url("/about-tree.png");
-	-webkit-shape-outside: url("/about-tree.png");
-	shape-image-threshold: 0.16;
 	shape-margin: var(--about-tree-gap);
 	-webkit-shape-margin: var(--about-tree-gap);
-}
-
-.is-safari .about-tree {
-	float: none;
-	display: block;
-	width: min(58vw, 17rem);
-	margin: 0 auto 1.5rem;
-	shape-outside: none;
-	-webkit-shape-outside: none;
 }
 
 @media (max-width: 800px) {
