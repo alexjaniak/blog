@@ -13,7 +13,7 @@ tags:
 <figure class="image-plate">
   <picture>
     <source srcset="/quaking-aspen.png">
-    <img src="/quaking-aspen.png" alt="Quaking aspen trees">
+    <img src="/quaking-aspen.png" alt="Redwood trees">
   </picture>
 </figure>
 
