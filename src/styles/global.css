@@ -950,9 +950,9 @@ pre {
 	.post-page-column,
 	.post-layout,
 	.post-layout article {
-		width: min(100%, 18rem) !important;
-		max-width: min(100%, 18rem) !important;
-		margin-left: 0;
+		width: 100% !important;
+		max-width: 100% !important;
+		margin-left: auto;
 		margin-right: auto;
 	}
 
@@ -962,7 +962,7 @@ pre {
 	.post-content > section,
 	.page-title {
 		width: 100%;
-		max-width: min(100%, 18rem) !important;
+		max-width: 100% !important;
 		overflow-wrap: anywhere;
 		word-break: break-word;
 		white-space: normal;
