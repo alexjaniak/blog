@@ -89,7 +89,7 @@ html {
 }
 
 body {
-	width: min(100% - 2rem, 1080px);
+	width: min(100% - 2rem, 1280px);
 	margin: 0 auto;
 	background: var(--background);
 	color: var(--text);
@@ -267,7 +267,7 @@ body {
 }
 
 .post-page-column {
-	width: min(1080px, 100%);
+	width: min(1280px, 100%);
 }
 
 .scroll-footer {
@@ -293,6 +293,7 @@ h1 {
 	font-weight: 700;
 	letter-spacing: -0.025em;
 	line-height: 1;
+	overflow-wrap: break-word;
 }
 
 .page-title {
@@ -319,6 +320,8 @@ p,
 li {
 	font-size: 1.22rem;
 	line-height: 1.88rem;
+	overflow-wrap: break-word;
+	hyphens: auto;
 }
 
 p {
@@ -473,6 +476,10 @@ hr,
 	min-width: 0;
 }
 
+.post-content {
+	position: relative;
+}
+
 .post-toc {
 	position: fixed;
 	top: 2rem;
@@ -619,6 +626,111 @@ hr,
 	font-size: 2.5rem;
 	line-height: 1;
 	text-align: center;
+}
+
+.post-content [data-footnote-ref] {
+	color: var(--muted);
+	font-family: var(--old-style);
+	font-size: 0.72em;
+	line-height: 0;
+	padding-left: 0.08rem;
+	background: none;
+	text-shadow: none;
+}
+
+.post-content [data-footnotes] {
+	border-top: 1px solid var(--rule);
+	color: var(--muted);
+	margin-top: 3.4rem;
+	padding-top: 1rem;
+}
+
+.post-content [data-footnotes] h2 {
+	color: var(--muted);
+	font-size: 1.1rem;
+	font-style: italic;
+	line-height: 1.25;
+	margin: 0 0 0.85rem;
+}
+
+.post-content [data-footnotes] ol {
+	margin: 0;
+	padding-left: 1.25rem;
+}
+
+.post-content [data-footnotes] li,
+.post-content [data-footnotes] p {
+	font-size: 1rem;
+	line-height: 1.45rem;
+}
+
+.post-content [data-footnotes] li {
+	margin: 0.65rem 0;
+}
+
+.post-content [data-footnotes] p {
+	margin: 0;
+}
+
+.post-content [data-footnote-backref] {
+	margin-left: 0.25rem;
+}
+
+.sidenote-layer {
+	display: none;
+}
+
+@media (min-width: 1280px) {
+	.post-content.has-sidenotes [data-footnotes] {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		white-space: nowrap;
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	.sidenote-layer {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		display: block;
+		width: clamp(10rem, 14vw, 13rem);
+		margin-left: 1.4rem;
+	}
+
+	.sidenote {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		color: var(--muted);
+		font-family: var(--old-style);
+		font-size: 0.86rem;
+		line-height: 1.22rem;
+		transition: color 180ms ease;
+	}
+
+	.sidenote.is-highlighted {
+		color: var(--text);
+	}
+
+	.sidenote-number {
+		float: left;
+		color: var(--text);
+		font-size: 0.78rem;
+		line-height: 1;
+		margin: 0.12rem 0.42rem 0 0;
+	}
+
+	.sidenote p {
+		font-size: inherit;
+		line-height: inherit;
+		margin: 0;
+	}
 }
 
 .about-section {
@@ -828,7 +940,41 @@ pre {
 
 @media (max-width: 640px) {
 	body {
-		width: min(100% - 1.5rem, 760px);
+		width: 100%;
+		max-width: 760px;
+		padding: 0 0.75rem;
+		overflow-x: hidden;
+	}
+
+	.content-column,
+	.post-page-column,
+	.post-layout,
+	.post-layout article {
+		width: min(100%, 18rem) !important;
+		max-width: min(100%, 18rem) !important;
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	.post-header,
+	.post-content > p,
+	.post-content > blockquote,
+	.post-content > section,
+	.page-title {
+		width: 100%;
+		max-width: min(100%, 18rem) !important;
+		overflow-wrap: anywhere;
+		word-break: break-word;
+		white-space: normal;
+	}
+
+	.post-content > p:first-of-type:first-letter {
+		float: none;
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		margin: 0;
+		padding: 0;
 	}
 
 	.post-content > .image-plate:first-child {
@@ -845,6 +991,16 @@ pre {
 
 	.top-header {
 		padding: 1.25rem 0 0.65rem;
+	}
+
+	h1 {
+		font-size: 1.9rem;
+	}
+
+	p,
+	li {
+		font-size: 1rem;
+		line-height: 1.58rem;
 	}
 
 	.header-primary {
@@ -902,7 +1058,7 @@ pre {
 	}
 
 	h1 {
-		font-size: 2.35rem;
+		font-size: 1.9rem;
 	}
 
 	.post-item-head {
@@ -930,14 +1086,10 @@ pre {
 
 	p,
 	li {
-		font-size: 1.12rem;
-		line-height: 1.7rem;
+		font-size: 1rem;
+		line-height: 1.58rem;
 	}
 
-	.post-content > p:first-of-type:first-letter {
-		font-size: 4.7em;
-		margin-right: 0.42rem;
-	}
 }
 
 @media (max-width: 420px) {

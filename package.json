@@ -15,6 +15,7 @@
 		"@astrojs/sitemap": "latest",
 		"astro": "latest",
 		"rehype-katex": "latest",
+		"remark-gfm": "^4.0.1",
 		"remark-math": "latest"
 	},
 	"devDependencies": {}

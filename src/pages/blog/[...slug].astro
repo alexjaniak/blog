@@ -136,4 +136,97 @@ const postJsonLd = {
 		window.addEventListener("resize", updateToc);
 		window.addEventListener("load", updateToc);
 	</script>
+	<script>
+		const postContent = document.querySelector(".post-content");
+		const footnoteSection = postContent?.querySelector("[data-footnotes]");
+		const desktopNotes = window.matchMedia("(min-width: 1280px)");
+		let sideNoteLayer;
+		let sideNotes = [];
+
+		function getTargetId(anchor) {
+			const href = anchor.getAttribute("href");
+			return href?.startsWith("#") ? decodeURIComponent(href.slice(1)) : "";
+		}
+
+		function makeSideNotes() {
+			sideNoteLayer?.remove();
+			sideNoteLayer = undefined;
+			sideNotes = [];
+			postContent?.classList.remove("has-sidenotes");
+
+			if (!postContent || !footnoteSection || !desktopNotes.matches) return;
+
+			const refs = Array.from(postContent.querySelectorAll("[data-footnote-ref]"));
+			const seen = new Set();
+			sideNoteLayer = document.createElement("aside");
+			sideNoteLayer.className = "sidenote-layer";
+			sideNoteLayer.setAttribute("aria-hidden", "true");
+
+			refs.forEach((ref) => {
+				const noteId = getTargetId(ref);
+				if (!noteId || seen.has(noteId)) return;
+
+				const original = document.getElementById(noteId);
+				if (!original) return;
+
+				seen.add(noteId);
+				const note = original.cloneNode(true);
+				note.querySelectorAll("[data-footnote-backref]").forEach((backref) => backref.remove());
+
+				const sideNote = document.createElement("div");
+				sideNote.className = "sidenote";
+				sideNote.dataset.footnoteId = noteId;
+				sideNote.innerHTML = `<span class="sidenote-number">${ref.textContent}</span>${note.innerHTML}`;
+				sideNoteLayer.append(sideNote);
+				sideNotes.push({ ref, sideNote });
+			});
+
+			if (sideNotes.length === 0) return;
+
+			postContent.append(sideNoteLayer);
+			postContent.classList.add("has-sidenotes");
+			positionSideNotes();
+		}
+
+		function positionSideNotes() {
+			if (!postContent || !sideNoteLayer || sideNotes.length === 0) return;
+
+			const contentTop = postContent.getBoundingClientRect().top + window.scrollY;
+			let previousBottom = 0;
+
+			sideNotes.forEach(({ ref, sideNote }) => {
+				const refTop = ref.getBoundingClientRect().top + window.scrollY - contentTop;
+				const top = Math.max(refTop - 4, previousBottom + 14);
+				sideNote.style.top = `${top}px`;
+				previousBottom = top + sideNote.offsetHeight;
+			});
+		}
+
+		function flashSideNote(ref) {
+			if (!desktopNotes.matches) return;
+
+			const noteId = getTargetId(ref);
+			const sideNote = sideNotes.find((item) => item.sideNote.dataset.footnoteId === noteId)?.sideNote;
+			if (!sideNote) return;
+
+			sideNote.classList.add("is-highlighted");
+			window.setTimeout(() => sideNote.classList.remove("is-highlighted"), 900);
+		}
+
+		postContent?.addEventListener("click", (event) => {
+			const ref = event.target.closest?.("[data-footnote-ref]");
+			if (!ref || !desktopNotes.matches) return;
+
+			event.preventDefault();
+			flashSideNote(ref);
+		});
+
+		makeSideNotes();
+		window.addEventListener("resize", () => {
+			makeSideNotes();
+			positionSideNotes();
+		});
+		window.addEventListener("load", positionSideNotes);
+		document.fonts?.ready.then(positionSideNotes);
+	</script>
 </Base>
