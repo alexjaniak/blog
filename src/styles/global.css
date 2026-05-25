@@ -568,9 +568,9 @@ hr,
 	position: relative;
 	display: block;
 	padding: 0.08rem 0;
-	opacity: 0.62;
-	transform: translateX(0);
-	transition: opacity 160ms ease, transform 160ms ease;
+	opacity: 0;
+	transform: none;
+	transition: opacity 120ms ease;
 }
 
 .post-toc a:first-child .post-toc-text {
@@ -579,16 +579,14 @@ hr,
 	text-transform: uppercase;
 }
 
-.post-toc a:hover .post-toc-text,
-.post-toc a:focus-visible .post-toc-text,
-.post-toc a.is-passed .post-toc-text {
+.post-toc:hover .post-toc-text,
+.post-toc:focus-within .post-toc-text {
 	opacity: 0.82;
-	transform: translateX(0.15rem);
 }
 
-.post-toc a.is-active .post-toc-text {
+.post-toc:hover a.is-active .post-toc-text,
+.post-toc:focus-within a.is-active .post-toc-text {
 	opacity: 1;
-	transform: translateX(0.25rem);
 }
 
 @media (max-width: 1280px) {
@@ -899,6 +897,28 @@ figure {
 	width: 100%;
 	max-width: none;
 	margin: 0;
+}
+
+.post-content > .image-plate-block:first-child {
+	float: none;
+	width: min(88%, 36rem);
+	margin: 0 auto 1.75rem;
+	text-align: center;
+	shape-outside: none;
+	-webkit-shape-outside: none;
+}
+
+.post-content > .image-plate-block:first-child img,
+.post-content > .image-plate-block:first-child picture {
+	width: 100%;
+	max-width: none;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.post-content > .image-plate-block:first-child figcaption {
+	font-size: 0.92rem;
+	line-height: 1.25;
 }
 
 .post-content > h2 {
