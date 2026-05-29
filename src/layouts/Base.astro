@@ -84,7 +84,7 @@ const jsonLd = {
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#fffff8" />
+		<meta name="theme-color" content="#f7f1e4" />
 		<title>{pageTitle}</title>
 		<meta name="description" content={description} />
 		<meta name="author" content="Alex Janiak" />
@@ -134,11 +134,19 @@ const jsonLd = {
 					<a href="/about/">About</a>
 				</nav>
 				<button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
-					<span data-theme-label>Dark</span>
-					<span class="theme-symbol" data-theme-symbol aria-hidden="true">
-						<svg viewBox="0 0 12 12">
-							<path d="M3.35 1a5 5 0 1 1 0 10 5.776 5.776 0 0 0 2.887-5A5.776 5.776 0 0 0 3.35 1Z" />
-						</svg>
+					<span class="theme-track" aria-hidden="true">
+						<span class="theme-option theme-option-light">
+							<svg viewBox="0 0 12 12">
+								<circle cx="6" cy="6" r="1.45" />
+								<path d="M6 1.15v1.3M6 9.55v1.3M1.15 6h1.3M9.55 6h1.3M2.58 2.58l0.92 0.92M8.5 8.5l0.92 0.92M9.42 2.58l-0.92 0.92M3.5 8.5l-0.92 0.92" />
+							</svg>
+						</span>
+						<span class="theme-option theme-option-dark">
+							<svg viewBox="0 0 12 12">
+								<path d="M3.35 1a5 5 0 1 1 0 10 5.776 5.776 0 0 0 2.887-5A5.776 5.776 0 0 0 3.35 1Z" />
+							</svg>
+						</span>
+						<span class="theme-thumb"></span>
 					</span>
 				</button>
 			</div>
@@ -152,18 +160,12 @@ const jsonLd = {
 		<script is:inline>
 			(() => {
 				const button = document.querySelector(".theme-toggle");
-				const label = document.querySelector("[data-theme-label]");
+				const themeColor = document.querySelector('meta[name="theme-color"]');
 
 				function paint(theme) {
 					document.documentElement.dataset.theme = theme;
+					themeColor?.setAttribute("content", theme === "dark" ? "#1c1b18" : "#f7f1e4");
 					button?.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
-					if (label) label.textContent = theme === "dark" ? "Light" : "Dark";
-					const symbol = document.querySelector("[data-theme-symbol]");
-					if (symbol) {
-						symbol.innerHTML = theme === "dark"
-							? '<svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="0.9" class="theme-symbol-fill" /><circle cx="6" cy="6" r="5" /></svg>'
-							: '<svg viewBox="0 0 12 12"><path d="M3.35 1a5 5 0 1 1 0 10 5.776 5.776 0 0 0 2.887-5A5.776 5.776 0 0 0 3.35 1Z" /></svg>';
-					}
 					try {
 						localStorage.setItem("theme", theme);
 					} catch {}
