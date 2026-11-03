@@ -3,8 +3,7 @@ title: Modes of Operation
 description: Frameworks to help you make decisions
 date: 2025-11-17
 tags:
-  - life
-  - philosophy
+  - phil
 ---
 
 <figure class="image-plate">

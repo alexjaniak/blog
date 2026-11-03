@@ -1,10 +1,11 @@
 ---
 import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
-import { formatLongDate } from "../../lib/posts";
+import TagList from "../../components/TagList.astro";
+import { formatLongDate, isVisible, platformName } from "../../lib/posts";
 
 export async function getStaticPaths() {
-	const posts = await getCollection("posts", ({ data }) => !data.draft);
+	const posts = await getCollection("posts", isVisible);
 	return posts.map((post) => ({
 		params: { slug: post.id },
 		props: { post },
@@ -34,7 +35,7 @@ const postJsonLd = {
 		url: "https://aelix.dev/",
 		sameAs: [
 			"https://github.com/alexjaniak",
-			"https://x.com/aelix0x",
+			"https://x.com/0xjaniak",
 			"https://www.linkedin.com/in/alexander-janiak/",
 			"https://www.lesswrong.com/users/alexjaniak",
 			"https://substack.com/@aelix0x",
@@ -73,12 +74,28 @@ const postJsonLd = {
 			<header class="post-header">
 				<h1 id="post-title" class="page-title">{post.data.title}</h1>
 				{post.data.description && <p class="subtitle">{post.data.description}</p>}
-				<time class="post-date" datetime={post.data.date.toISOString()}>{formatLongDate(post.data.date)}</time>
+				<div class="post-meta">
+					<time class="post-date" datetime={post.data.date.toISOString()}>{formatLongDate(post.data.date)}</time>
+					{post.data.originalUrl && <a class="post-original" href={post.data.originalUrl}>Originally on {platformName(post.data.originalUrl)}</a>}
+					{post.data.alsoOnUrl && <a class="post-original" href={post.data.alsoOnUrl}>Also on {platformName(post.data.alsoOnUrl)}</a>}
+				</div>
+				<TagList tags={post.data.tags} />
 			</header>
+			{
+				tocHeadings.length > 2 && (
+					<details class="post-contents">
+						<summary>Contents</summary>
+						<ol>
+							{tocHeadings.map((heading) => (
+								<li><a href={`#${heading.slug}`}>{heading.text}</a></li>
+							))}
+						</ol>
+					</details>
+				)
+			}
 			<div class="post-content">
 				<Content />
 			</div>
-			<div class="post-endmark" aria-hidden="true">*</div>
 		</article>
 	</div>
 	<script>
@@ -139,7 +156,7 @@ const postJsonLd = {
 	<script>
 		const postContent = document.querySelector(".post-content");
 		const footnoteSection = postContent?.querySelector("[data-footnotes]");
-		const desktopNotes = window.matchMedia("(min-width: 1280px)");
+		const desktopNotes = window.matchMedia("(min-width: 1200px)");
 		let sideNoteLayer;
 		let sideNotes = [];
 

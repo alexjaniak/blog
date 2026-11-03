@@ -4,10 +4,6 @@ description: On the practical limitations of decision markets
 date: 2026-05-10
 tags:
   - forecasting
-  - prediction markets
-  - futarchy
-  - decision markets
-  - mechanism design
 ---
 
 <figure class="image-plate">

@@ -3,8 +3,7 @@ title: An Ideal World Approximator
 description: How to understand the world and make better decisions.
 date: 2025-10-19
 tags:
-  - life
-  - philosophy
+  - phil
 ---
 
 <figure class="image-plate">

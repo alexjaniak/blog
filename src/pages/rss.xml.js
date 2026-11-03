@@ -5,8 +5,8 @@ export async function GET(context) {
 	const posts = await getPublishedPosts();
 
 	return rss({
-		title: "Language Games | Alex Janiak's Blog",
-		description: "Essays by Alex Janiak on AI, forecasting, futarchy, decision markets, mechanism design, game theory, and decision-making under uncertainty.",
+		title: "The Garbage Collector | Alex Janiak's Blog",
+		description: "Writing by Alex Janiak on LLM inference optimization, GPU systems, forecasting, and mechanism design.",
 		site: context.site,
 		items: posts.map((post) => ({
 			title: post.data.title,

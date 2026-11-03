@@ -2,12 +2,9 @@
 title: How AI Will Save Prediction Markets
 description: Why prediction markets need AI agents to become useful truth machines.
 date: 2026-05-22
+alsoOnUrl: https://x.com/0xjaniak/status/2058907417161646186
 tags:
-  - AI
   - forecasting
-  - prediction markets
-  - info finance
-  - mechanism design
 ---
 
 <figure class="image-plate image-plate-block">

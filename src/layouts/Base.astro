@@ -8,13 +8,13 @@ type Props = {
 };
 
 const {
-	title = "Language Games",
-	description = "Alex Janiak writes Language Games: essays on AI, forecasting, futarchy, decision markets, mechanism design, game theory, and decision-making under uncertainty.",
+	title = "The Garbage Collector",
+	description = "Alex Janiak writes The Garbage Collector: technical notes on LLM inference optimization and GPU systems, plus essays on forecasting and mechanism design.",
 	contentClass = "content-column",
 } = Astro.props;
 
-const siteName = "Language Games | Alex Janiak's Blog";
-const pageTitle = title === "Language Games" ? siteName : `${title} | ${siteName}`;
+const siteName = "The Garbage Collector | Alex Janiak's Blog";
+const pageTitle = title === "The Garbage Collector" ? siteName : `${title} | ${siteName}`;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://aelix.dev").toString();
 const absoluteOgImage = new URL("/og-image.jpg", Astro.site ?? "https://aelix.dev").toString();
 const path = Astro.url.pathname;
@@ -25,16 +25,24 @@ const jsonLd = {
 			"@type": "Person",
 			"@id": "https://aelix.dev/#alex-janiak",
 			name: "Alex Janiak",
-			alternateName: ["Alexander Janiak", "Aelix", "aelix0x"],
+			alternateName: ["Alexander Janiak", "Aelix", "aelix0x", "0xjaniak"],
 			url: "https://aelix.dev/",
 			image: absoluteOgImage,
-			jobTitle: "Startup founder",
-			description: "Alex Janiak is a startup founder building AI forecasting systems for better decision-making under uncertainty.",
+			jobTitle: "Cofounder & Chief Scientist",
+			description: "Alex Janiak is cofounder and Chief Scientist of Pareto Inference, tuning custom and open-source model inference.",
+			worksFor: {
+				"@type": "Organization",
+				name: "Pareto Inference",
+				url: "https://paretoinference.com/",
+			},
 			alumniOf: {
 				"@type": "CollegeOrUniversity",
 				name: "Duke University",
 			},
 			knowsAbout: [
+				"LLM inference",
+				"inference optimization",
+				"GPU kernels",
 				"AI",
 				"forecasting",
 				"futarchy",
@@ -49,7 +57,7 @@ const jsonLd = {
 			],
 			sameAs: [
 				"https://github.com/alexjaniak",
-				"https://x.com/aelix0x",
+				"https://x.com/0xjaniak",
 				"https://www.linkedin.com/in/alexander-janiak/",
 				"https://www.lesswrong.com/users/alexjaniak",
 				"https://substack.com/@aelix0x",
@@ -59,7 +67,7 @@ const jsonLd = {
 			"@type": "WebSite",
 			"@id": "https://aelix.dev/#website",
 			name: siteName,
-			alternateName: "Language Games",
+			alternateName: "The Garbage Collector",
 			url: "https://aelix.dev/",
 			description,
 			author: { "@id": "https://aelix.dev/#alex-janiak" },
@@ -69,7 +77,7 @@ const jsonLd = {
 		{
 			"@type": "Blog",
 			"@id": "https://aelix.dev/#blog",
-			name: "Language Games",
+			name: "The Garbage Collector",
 			url: "https://aelix.dev/",
 			description,
 			author: { "@id": "https://aelix.dev/#alex-janiak" },
@@ -84,14 +92,14 @@ const jsonLd = {
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#f7f1e4" />
+		<meta name="theme-color" content="#fffff8" />
 		<title>{pageTitle}</title>
 		<meta name="description" content={description} />
 		<meta name="author" content="Alex Janiak" />
-		<meta name="keywords" content="Alex Janiak, Alexander Janiak, Aelix, aelix0x, AI, forecasting, futarchy, decision markets, prediction markets, mechanism design, game theory, decision-making under uncertainty, systems engineering, Duke University, Rust, Python" />
+		<meta name="keywords" content="Alex Janiak, Alexander Janiak, Aelix, aelix0x, 0xjaniak, Pareto Inference, LLM inference, inference optimization, GPU kernels, AI, forecasting, futarchy, decision markets, prediction markets, mechanism design, game theory, decision-making under uncertainty, systems engineering, Duke University, Rust, Python" />
 		<meta name="robots" content="index, follow, max-image-preview:large" />
 		<link rel="canonical" href={canonical} />
-		<link rel="alternate" href="/rss.xml" type="application/rss+xml" title="Language Games RSS" />
+		<link rel="alternate" href="/rss.xml" type="application/rss+xml" title="The Garbage Collector RSS" />
 		<link rel="icon" href="/favicon.png" type="image/png" />
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:description" content={description} />
@@ -99,9 +107,9 @@ const jsonLd = {
 		<meta property="og:url" content={canonical} />
 		<meta property="og:site_name" content={siteName} />
 		<meta property="og:image" content={absoluteOgImage} />
-		<meta property="og:image:alt" content="Language Games by Alex Janiak" />
+		<meta property="og:image:alt" content="The Garbage Collector by Alex Janiak" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:creator" content="@aelix0x" />
+		<meta name="twitter:creator" content="@0xjaniak" />
 		<meta name="twitter:title" content={pageTitle} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={absoluteOgImage} />
@@ -128,34 +136,35 @@ const jsonLd = {
 		<a class="skip-link" href="#content">Skip to content</a>
 		<header class="top-header">
 			<div class="header-primary">
-				<a class="site-title" href="/">Language Games</a>
-				<nav class="site-nav" aria-label="Primary navigation">
-					<a href="/">Blog</a>
-					<a href="/about/">About</a>
-				</nav>
-				<button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
-					<span class="theme-track" aria-hidden="true">
-						<span class="theme-option theme-option-light">
-							<svg viewBox="0 0 12 12">
-								<circle cx="6" cy="6" r="1.45" />
-								<path d="M6 1.15v1.3M6 9.55v1.3M1.15 6h1.3M9.55 6h1.3M2.58 2.58l0.92 0.92M8.5 8.5l0.92 0.92M9.42 2.58l-0.92 0.92M3.5 8.5l-0.92 0.92" />
-							</svg>
+				<a class="site-title" href="/">The Garbage Collector</a>
+				<div class="header-controls">
+					<nav class="site-nav" aria-label="Primary navigation">
+						<a href="/" aria-current={path === "/" || path.startsWith("/blog") ? "page" : undefined}>Blog</a>
+						<a href="/about/" aria-current={path.startsWith("/about") ? "page" : undefined}>About</a>
+					</nav>
+					<button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+						<span class="theme-track" aria-hidden="true">
+							<span class="theme-option theme-option-light">
+								<svg viewBox="0 0 12 12">
+									<circle cx="6" cy="6" r="1.45" />
+									<path d="M6 1.15v1.3M6 9.55v1.3M1.15 6h1.3M9.55 6h1.3M2.58 2.58l0.92 0.92M8.5 8.5l0.92 0.92M9.42 2.58l-0.92 0.92M3.5 8.5l-0.92 0.92" />
+								</svg>
+							</span>
+							<span class="theme-option theme-option-dark">
+								<svg viewBox="0 0 12 12">
+									<path d="M3.35 1a5 5 0 1 1 0 10 5.776 5.776 0 0 0 2.887-5A5.776 5.776 0 0 0 3.35 1Z" />
+								</svg>
+							</span>
+							<span class="theme-thumb"></span>
 						</span>
-						<span class="theme-option theme-option-dark">
-							<svg viewBox="0 0 12 12">
-								<path d="M3.35 1a5 5 0 1 1 0 10 5.776 5.776 0 0 0 2.887-5A5.776 5.776 0 0 0 3.35 1Z" />
-							</svg>
-						</span>
-						<span class="theme-thumb"></span>
-					</span>
-				</button>
+					</button>
+				</div>
 			</div>
 		</header>
 		<div class={contentClass}>
 			<main id="content">
 				<slot />
 			</main>
-			<footer class="scroll-footer" aria-hidden="true"></footer>
 		</div>
 		<script is:inline>
 			(() => {
@@ -164,7 +173,7 @@ const jsonLd = {
 
 				function paint(theme) {
 					document.documentElement.dataset.theme = theme;
-					themeColor?.setAttribute("content", theme === "dark" ? "#1c1b18" : "#f7f1e4");
+					themeColor?.setAttribute("content", theme === "dark" ? "#151513" : "#fffff8");
 					button?.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
 					try {
 						localStorage.setItem("theme", theme);

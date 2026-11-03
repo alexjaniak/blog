@@ -1,21 +1,12 @@
 ---
 import Base from "../layouts/Base.astro";
-import { formatShortDate, getPublishedPosts } from "../lib/posts";
+import PostList from "../components/PostList.astro";
+import { getPublishedPosts } from "../lib/posts";
 
 const posts = await getPublishedPosts();
 ---
 
-<Base title="Language Games" description="Language Games is Alex Janiak's blog on AI, forecasting, futarchy, decision markets, mechanism design, game theory, and decision-making under uncertainty.">
+<Base title="The Garbage Collector" description="The Garbage Collector is Alex Janiak's blog: technical notes on LLM inference optimization and GPU systems, plus essays on forecasting and mechanism design.">
 	<h1 class="page-title">Blog</h1>
-	<ul class="post-list">
-		{posts.map((post) => (
-			<li class="post-item">
-				<div class="post-item-head">
-					<a class="post-item-title" href={`/blog/${post.id}/`}>{post.data.title}</a>
-					<time class="post-item-date" datetime={post.data.date.toISOString()}>{formatShortDate(post.data.date)}</time>
-				</div>
-				{post.data.description && <p class="post-item-description">{post.data.description}</p>}
-			</li>
-		))}
-	</ul>
+	<PostList posts={posts} />
 </Base>
